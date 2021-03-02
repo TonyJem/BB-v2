@@ -13,7 +13,7 @@ class EpisodesViewController: UIViewController {
         seasonsTableView.tableFooterView = UIView()
     }
     
-    @IBAction func filterButtonIsTapped(_ sender: UIBarButtonItem) {
+    @IBAction func filterButtonTap(_ sender: UIBarButtonItem) {
         print("🟢 Filter button is tapped")
     }
     
@@ -22,7 +22,6 @@ class EpisodesViewController: UIViewController {
 extension EpisodesViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-//        print(model.seasonNumbers.count)
         return model.seasonNumbers.count
     }
     

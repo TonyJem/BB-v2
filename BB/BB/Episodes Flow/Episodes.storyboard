@@ -11,7 +11,7 @@
         <!--Episodes-->
         <scene sceneID="u1x-Kc-ON7">
             <objects>
-                <viewController id="hgE-bD-G6B" customClass="EpisodesViewController" customModule="BreakingBadFan_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hgE-bD-G6B" customClass="EpisodesViewController" customModule="BB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9bf-4P-0vI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" title="Episodes" id="g5r-cW-guk">
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="xDe-24-glH">
                             <connections>
-                                <action selector="filterButtonIsTapped:" destination="hgE-bD-G6B" id="dwW-01-X2k"/>
+                                <action selector="filterButtonTap:" destination="hgE-bD-G6B" id="Tgn-z4-6Yx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -48,7 +48,7 @@
         <!--Episode Details View Controller-->
         <scene sceneID="3GO-cQ-v7c">
             <objects>
-                <viewController id="veS-hj-A32" customClass="EpisodeDetailsViewController" customModule="BreakingBadFan_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="veS-hj-A32" customClass="EpisodeDetailsViewController" customModule="BB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d60-Ln-r61">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +75,7 @@
         <!--Character Details View Controller-->
         <scene sceneID="iRm-Nf-oSE">
             <objects>
-                <viewController id="maa-YE-I2A" customClass="CharacterDetailsViewController" customModule="BreakingBadFan_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="maa-YE-I2A" customClass="CharacterDetailsViewController" customModule="BB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7bv-fr-Qob">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

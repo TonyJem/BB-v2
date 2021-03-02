@@ -57,14 +57,7 @@ class HomeViewController: MainViewController {
         apiManager.getCharacters { result in
             switch result {
             case .success(let characters):
-                print("🟢  Characters didFetch: \(characters)" )
                 self.characterModel.characters = characters
-                
-                print("🟢 Count:")
-                print(self.characterModel.characters.count)
-                
-                print("🟢 1st item print:")
-                print(self.characterModel.characters[0].name)
                 self.proceedToCharactersScene()
             case .failure(let error):
                 print("🔴 \(error)")
