@@ -103,8 +103,8 @@
 				3A7620C125EEDC53009166AD /* UIElements */,
 				3A7620B625EEDC2F009166AD /* Extensions */,
 				3A7620B225EEDC2F009166AD /* Managers */,
-				3A7620AB25EEDC2F009166AD /* Home Screen */,
 				3A7620AE25EEDC2F009166AD /* Login Screen */,
+				3A7620AB25EEDC2F009166AD /* Home Screen */,
 				3A7620A525EEDBFF009166AD /* Episodes Screen */,
 				3A7620C425EEDC53009166AD /* ViewControllers */,
 				3A76209325EEDA24009166AD /* Resources */,
@@ -183,9 +183,9 @@
 		3A7620B225EEDC2F009166AD /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				3A7620B525EEDC2F009166AD /* Core.swift */,
 				3A7620B325EEDC2F009166AD /* AccountManager.swift */,
 				3A7620B425EEDC2F009166AD /* UserDefaultsManager.swift */,
-				3A7620B525EEDC2F009166AD /* Core.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";

@@ -10,8 +10,9 @@ class HomeViewController: MainViewController {
     @IBOutlet private weak var logoutButton: UIButton!
     
     private let apiManager = Core.ApiManager
-    private let model = Core.Seasons
-    
+    private let seasonModel = Core.Seasons
+    private let characterModel = Core.Characters
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,17 +29,7 @@ class HomeViewController: MainViewController {
     
     @IBAction private func charactersButtonTapped(_ sender: UIButton) {
         print("🟢 charactersButtonDidTap")
-        
-        apiManager.getCharacters { result in
-            switch result {
-            case .success(let episodes):
-//   TODO: Add real functionality here
-                print("🟢  Episodes didFetch: \(episodes)" )
-            case .failure(let error):
-                print("🔴 \(error)")
-            }
-        }
-
+        fetchCharactersToModel()
     }
     
     @IBAction private func quotesButtonTapped(_ sender: UIButton) {
@@ -54,8 +45,27 @@ class HomeViewController: MainViewController {
         apiManager.getEpisodes { result in
             switch result {
             case .success(let episodes):
-                self.model.episodes = episodes
+                self.seasonModel.episodes = episodes
                 self.proceedEpisodesScene()
+            case .failure(let error):
+                print("🔴 \(error)")
+            }
+        }
+    }
+    
+    private func fetchCharactersToModel() {
+        apiManager.getCharacters { result in
+            switch result {
+            case .success(let characters):
+                print("🟢  Characters didFetch: \(characters)" )
+                self.characterModel.characters = characters
+                
+                print("🟢 Count:")
+                print(self.characterModel.characters.count)
+                
+                print("🟢 1st item print:")
+                print(self.characterModel.characters[0].name)
+                
             case .failure(let error):
                 print("🔴 \(error)")
             }
