@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="BreakingBadFan_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvu-FG-kXV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breaking Bad Fan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iA-y9-VKn">
+                                        <rect key="frame" x="141" y="170" width="132.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnv-Zy-RaJ">
+                                        <rect key="frame" x="20" y="298.5" width="374" height="299"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sRY-WK-D4l">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="CKy-Lg-cbG"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="LOGIN"/>
+                                                    <segment title="REGISTER"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="loginSegmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cIh-fd-xHR"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11M-nj-no4">
+                                                <rect key="frame" x="0.0" y="259" width="374" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Wdg-dC-1ZL"/>
+                                                </constraints>
+                                                <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="submitButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pq5-6l-J9q"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c4E-HI-zmY">
+                                                <rect key="frame" x="20" y="70" width="334" height="160"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yqh-VC-8NN" customClass="CustomTextField" customModule="BreakingBadFan_App" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="792-Vw-xg3"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="huh-9h-5lL" customClass="CustomTextField" customModule="BreakingBadFan_App" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="60" width="334" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="FsZ-40-Rxz"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9iw-a4-YEq" customClass="CustomTextField" customModule="BreakingBadFan_App" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="120" width="334" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="01I-Yx-YED"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="huh-9h-5lL" firstAttribute="leading" secondItem="c4E-HI-zmY" secondAttribute="leading" id="XXe-3f-LOv"/>
+                                                    <constraint firstItem="9iw-a4-YEq" firstAttribute="leading" secondItem="c4E-HI-zmY" secondAttribute="leading" id="XvM-VO-gq2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9iw-a4-YEq" secondAttribute="trailing" id="kV0-pX-8IW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="huh-9h-5lL" secondAttribute="trailing" id="m9d-L9-TuC"/>
+                                                    <constraint firstItem="Yqh-VC-8NN" firstAttribute="leading" secondItem="c4E-HI-zmY" secondAttribute="leading" id="qsf-KA-W05"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Yqh-VC-8NN" secondAttribute="trailing" id="tDr-RG-ejc"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="sRY-WK-D4l" firstAttribute="top" secondItem="rnv-Zy-RaJ" secondAttribute="top" id="2MM-wq-yGS"/>
+                                            <constraint firstItem="c4E-HI-zmY" firstAttribute="leading" secondItem="rnv-Zy-RaJ" secondAttribute="leading" constant="20" id="GQS-gz-aQ7"/>
+                                            <constraint firstItem="c4E-HI-zmY" firstAttribute="top" secondItem="sRY-WK-D4l" secondAttribute="bottom" constant="30" id="QwJ-Lj-z4k"/>
+                                            <constraint firstAttribute="trailing" secondItem="sRY-WK-D4l" secondAttribute="trailing" id="e40-Zq-9H3"/>
+                                            <constraint firstItem="11M-nj-no4" firstAttribute="leading" secondItem="rnv-Zy-RaJ" secondAttribute="leading" id="fd4-ZL-z3b"/>
+                                            <constraint firstAttribute="trailing" secondItem="c4E-HI-zmY" secondAttribute="trailing" constant="20" id="hXC-ZP-hBy"/>
+                                            <constraint firstAttribute="trailing" secondItem="11M-nj-no4" secondAttribute="trailing" id="i5u-Yf-2Dj"/>
+                                            <constraint firstItem="sRY-WK-D4l" firstAttribute="leading" secondItem="rnv-Zy-RaJ" secondAttribute="leading" id="ooQ-fB-mxl"/>
+                                            <constraint firstAttribute="bottom" secondItem="11M-nj-no4" secondAttribute="bottom" id="q7m-dP-7fk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="0iA-y9-VKn" firstAttribute="top" secondItem="Kvu-FG-kXV" secondAttribute="top" constant="170" id="Qls-W9-PpR"/>
+                                    <constraint firstAttribute="trailing" secondItem="rnv-Zy-RaJ" secondAttribute="trailing" constant="20" id="Sza-ef-QZT"/>
+                                    <constraint firstItem="0iA-y9-VKn" firstAttribute="centerX" secondItem="Kvu-FG-kXV" secondAttribute="centerX" id="YDJ-8L-Jee"/>
+                                    <constraint firstItem="rnv-Zy-RaJ" firstAttribute="height" secondItem="Kvu-FG-kXV" secondAttribute="height" multiplier="0.333333" id="dYe-U8-EDq"/>
+                                    <constraint firstItem="rnv-Zy-RaJ" firstAttribute="leading" secondItem="Kvu-FG-kXV" secondAttribute="leading" constant="20" id="fK0-xB-rtg"/>
+                                    <constraint firstItem="rnv-Zy-RaJ" firstAttribute="centerY" secondItem="Kvu-FG-kXV" secondAttribute="centerY" id="kaQ-VW-YOA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Kvu-FG-kXV" secondAttribute="trailing" id="TEP-5e-HvR"/>
+                            <constraint firstItem="Kvu-FG-kXV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ee3-bF-P6y"/>
+                            <constraint firstAttribute="bottom" secondItem="Kvu-FG-kXV" secondAttribute="bottom" id="vZ0-Xt-5Kz"/>
+                            <constraint firstItem="Kvu-FG-kXV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xnj-HT-7t2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="appTitleLabel" destination="0iA-y9-VKn" id="Ily-Ms-xzk"/>
+                        <outlet property="confirmPasswordTextField" destination="9iw-a4-YEq" id="v6A-xu-y2d"/>
+                        <outlet property="loginSegmentedControl" destination="sRY-WK-D4l" id="cx4-Oy-oIz"/>
+                        <outlet property="passwordTextField" destination="huh-9h-5lL" id="NLk-Ca-etD"/>
+                        <outlet property="submitButton" destination="11M-nj-no4" id="1UI-OW-e5z"/>
+                        <outlet property="usernameTextField" destination="Yqh-VC-8NN" id="BUI-7m-Vvf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-178.2608695652174" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Episodes-->
+        <scene sceneID="u1x-Kc-ON7">
+            <objects>
+                <viewController id="hgE-bD-G6B" customClass="EpisodesViewController" customModule="BreakingBadFan_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9bf-4P-0vI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FNV-1F-hhE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Z67-Ft-kTF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FNV-1F-hhE" firstAttribute="top" secondItem="9bf-4P-0vI" secondAttribute="top" id="PXE-Gt-UCF"/>
+                            <constraint firstAttribute="trailing" secondItem="FNV-1F-hhE" secondAttribute="trailing" id="QHR-jX-SYj"/>
+                            <constraint firstItem="FNV-1F-hhE" firstAttribute="leading" secondItem="Z67-Ft-kTF" secondAttribute="leading" id="fcj-F1-CqD"/>
+                            <constraint firstAttribute="bottom" secondItem="FNV-1F-hhE" secondAttribute="bottom" id="pvA-W4-Xvp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Episodes" id="g5r-cW-guk">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="xDe-24-glH">
+                            <connections>
+                                <action selector="filterButtonIsTapped:" destination="hgE-bD-G6B" id="dwW-01-X2k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="seasonsTableView" destination="FNV-1F-hhE" id="RGX-up-eAY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="15U-SV-yvz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="168.75"/>
+        </scene>
+        <!--Episode Details View Controller-->
+        <scene sceneID="3GO-cQ-v7c">
+            <objects>
+                <viewController id="veS-hj-A32" customClass="EpisodeDetailsViewController" customModule="BreakingBadFan_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d60-Ln-r61">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A73-aV-RwT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="U0P-YQ-VHh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="A73-aV-RwT" firstAttribute="leading" secondItem="U0P-YQ-VHh" secondAttribute="leading" id="Dm5-N1-uLy"/>
+                            <constraint firstAttribute="bottom" secondItem="A73-aV-RwT" secondAttribute="bottom" id="Fy7-4O-fMD"/>
+                            <constraint firstItem="A73-aV-RwT" firstAttribute="top" secondItem="d60-Ln-r61" secondAttribute="top" id="Ja5-k5-1SS"/>
+                            <constraint firstItem="A73-aV-RwT" firstAttribute="trailing" secondItem="U0P-YQ-VHh" secondAttribute="trailing" id="RX0-9t-RrC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dkn-ty-17W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1755.072463768116" y="168.75"/>
+        </scene>
+        <!--Character Details View Controller-->
+        <scene sceneID="iRm-Nf-oSE">
+            <objects>
+                <viewController id="maa-YE-I2A" customClass="CharacterDetailsViewController" customModule="BreakingBadFan_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7bv-fr-Qob">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pfc-C9-qDC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NqG-56-lRX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pfc-C9-qDC" firstAttribute="top" secondItem="7bv-fr-Qob" secondAttribute="top" id="75k-PB-q0H"/>
+                            <constraint firstAttribute="bottom" secondItem="Pfc-C9-qDC" secondAttribute="bottom" id="Fq0-ux-Qff"/>
+                            <constraint firstItem="Pfc-C9-qDC" firstAttribute="trailing" secondItem="NqG-56-lRX" secondAttribute="trailing" id="RZv-Y4-jbj"/>
+                            <constraint firstItem="Pfc-C9-qDC" firstAttribute="leading" secondItem="NqG-56-lRX" secondAttribute="leading" id="sJh-pW-QJH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mm7-tz-xPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2455.072463768116" y="168.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aaa-OV-7cG">
+            <objects>
+                <navigationController storyboardIdentifier="Episodes" automaticallyAdjustsScrollViewInsets="NO" id="sy9-Ue-lky" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N0D-ne-WsL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hgE-bD-G6B" kind="relationship" relationship="rootViewController" id="gsE-dh-yJ7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KBF-Jm-Nea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="168.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
