@@ -31,8 +31,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Characters" id="g5r-cW-guk">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="xDe-24-glH"/>
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="xDe-24-glH">
+                            <connections>
+                                <action selector="filterButtonTapped:" destination="hgE-bD-G6B" id="Yyo-dh-bqM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="charactersTableView" destination="FNV-1F-hhE" id="FHb-3K-wTw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15U-SV-yvz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
