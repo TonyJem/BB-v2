@@ -35,6 +35,7 @@
 		3AE59FCB25EEDF04000EAF30 /* SwiftKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE59FCA25EEDF04000EAF30 /* SwiftKeychain.swift */; };
 		3AE59FD025EEE231000EAF30 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE59FCF25EEE231000EAF30 /* CharacterModel.swift */; };
 		3AE59FD525EEE730000EAF30 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE59FD425EEE730000EAF30 /* CharactersViewController.swift */; };
+		3AE59FDA25EEE810000EAF30 /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE59FD925EEE810000EAF30 /* Characters.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		3AE59FCA25EEDF04000EAF30 /* SwiftKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftKeychain.swift; sourceTree = "<group>"; };
 		3AE59FCF25EEE231000EAF30 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		3AE59FD425EEE730000EAF30 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		3AE59FD925EEE810000EAF30 /* Characters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Characters.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 		3AE59FD325EEE710000EAF30 /* Characters Screen */ = {
 			isa = PBXGroup;
 			children = (
+				3AE59FD925EEE810000EAF30 /* Characters.storyboard */,
 				3AE59FD425EEE730000EAF30 /* CharactersViewController.swift */,
 			);
 			path = "Characters Screen";
@@ -302,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE59FDA25EEE810000EAF30 /* Characters.storyboard in Resources */,
 				3A76208A25EED9F8009166AD /* LaunchScreen.storyboard in Resources */,
 				3A7620B825EEDC2F009166AD /* Home.storyboard in Resources */,
 				3A7620BA25EEDC2F009166AD /* Login.storyboard in Resources */,
