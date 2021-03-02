@@ -34,6 +34,7 @@
 		3AE59FC625EEDEB3000EAF30 /* SeasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE59FC525EEDEB3000EAF30 /* SeasonModel.swift */; };
 		3AE59FCB25EEDF04000EAF30 /* SwiftKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE59FCA25EEDF04000EAF30 /* SwiftKeychain.swift */; };
 		3AE59FD025EEE231000EAF30 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE59FCF25EEE231000EAF30 /* CharacterModel.swift */; };
+		3AE59FD525EEE730000EAF30 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE59FD425EEE730000EAF30 /* CharactersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		3AE59FC525EEDEB3000EAF30 /* SeasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonModel.swift; sourceTree = "<group>"; };
 		3AE59FCA25EEDF04000EAF30 /* SwiftKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftKeychain.swift; sourceTree = "<group>"; };
 		3AE59FCF25EEE231000EAF30 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		3AE59FD425EEE730000EAF30 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				3A7620AE25EEDC2F009166AD /* Login Screen */,
 				3A7620AB25EEDC2F009166AD /* Home Screen */,
 				3A7620A525EEDBFF009166AD /* Episodes Screen */,
+				3AE59FD325EEE710000EAF30 /* Characters Screen */,
 				3A7620C425EEDC53009166AD /* ViewControllers */,
 				3A76209325EEDA24009166AD /* Resources */,
 				3A76209225EEDA11009166AD /* Delegate */,
@@ -234,6 +237,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		3AE59FD325EEE710000EAF30 /* Characters Screen */ = {
+			isa = PBXGroup;
+			children = (
+				3AE59FD425EEE730000EAF30 /* CharactersViewController.swift */,
+			);
+			path = "Characters Screen";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +323,7 @@
 				3A7620CB25EEDC53009166AD /* EpisodeDetailsViewController.swift in Sources */,
 				3A7620A225EEDBA5009166AD /* APIManager.swift in Sources */,
 				3A7620BE25EEDC2F009166AD /* Core.swift in Sources */,
+				3AE59FD525EEE730000EAF30 /* CharactersViewController.swift in Sources */,
 				3A7620CA25EEDC53009166AD /* MainViewController.swift in Sources */,
 				3A7620A325EEDBA5009166AD /* APIEndpoint.swift in Sources */,
 				3AE59FC625EEDEB3000EAF30 /* SeasonModel.swift in Sources */,
