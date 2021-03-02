@@ -46,7 +46,7 @@ class HomeViewController: MainViewController {
             switch result {
             case .success(let episodes):
                 self.seasonModel.episodes = episodes
-                self.proceedEpisodesScene()
+                self.proceedToEpisodesScene()
             case .failure(let error):
                 print("🔴 \(error)")
             }
@@ -65,7 +65,7 @@ class HomeViewController: MainViewController {
                 
                 print("🟢 1st item print:")
                 print(self.characterModel.characters[0].name)
-                
+                self.proceedToCharactersScene()
             case .failure(let error):
                 print("🔴 \(error)")
             }

@@ -12,6 +12,10 @@ class MainViewController: UIViewController {
         UIStoryboard(name: "Episodes", bundle: nil)
     }()
     
+    private lazy var CharactersStoryboard: UIStoryboard = {
+        UIStoryboard(name: "Characters", bundle: nil)
+    }()
+    
 // MARK: - Controllers
     
     private var HomeViewController: UIViewController {
@@ -20,6 +24,10 @@ class MainViewController: UIViewController {
 
     private var EpisodesNavigationController: UINavigationController {
         EpisodesStoryboard.instantiateViewController(identifier: "Episodes")
+    }
+    
+    private var CharactersNavigationController: UINavigationController {
+        CharactersStoryboard.instantiateViewController(identifier: "Characters")
     }
     
 }
@@ -33,9 +41,14 @@ extension MainViewController {
         present(HomeViewController, animated: true)
     }
     
-    func proceedEpisodesScene() {
+    func proceedToEpisodesScene() {
         modalPresentationStyle = .fullScreen
         present(EpisodesNavigationController, animated: true)
+    }
+    
+    func proceedToCharactersScene() {
+        modalPresentationStyle = .fullScreen
+        present(CharactersNavigationController, animated: true)
     }
     
 }

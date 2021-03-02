@@ -107,11 +107,11 @@
 				3A7620C125EEDC53009166AD /* UIElements */,
 				3A7620B625EEDC2F009166AD /* Extensions */,
 				3A7620B225EEDC2F009166AD /* Managers */,
-				3A7620AE25EEDC2F009166AD /* Login Screen */,
-				3A7620AB25EEDC2F009166AD /* Home Screen */,
-				3A7620A525EEDBFF009166AD /* Episodes Screen */,
-				3AE59FD325EEE710000EAF30 /* Characters Screen */,
 				3A7620C425EEDC53009166AD /* ViewControllers */,
+				3A7620AE25EEDC2F009166AD /* LoginRegister Screen */,
+				3A7620AB25EEDC2F009166AD /* Home Screen */,
+				3A7620A525EEDBFF009166AD /* Episodes Flow */,
+				3AE59FD325EEE710000EAF30 /* Characters Flow */,
 				3A76209325EEDA24009166AD /* Resources */,
 				3A76209225EEDA11009166AD /* Delegate */,
 				3A76208825EED9F8009166AD /* LaunchScreen.storyboard */,
@@ -158,13 +158,14 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
-		3A7620A525EEDBFF009166AD /* Episodes Screen */ = {
+		3A7620A525EEDBFF009166AD /* Episodes Flow */ = {
 			isa = PBXGroup;
 			children = (
 				3A7620A625EEDBFF009166AD /* Episodes.storyboard */,
 				3A7620A725EEDBFF009166AD /* EpisodesViewController.swift */,
+				3A7620C725EEDC53009166AD /* EpisodeDetailsViewController.swift */,
 			);
-			path = "Episodes Screen";
+			path = "Episodes Flow";
 			sourceTree = "<group>";
 		};
 		3A7620AB25EEDC2F009166AD /* Home Screen */ = {
@@ -176,13 +177,13 @@
 			path = "Home Screen";
 			sourceTree = "<group>";
 		};
-		3A7620AE25EEDC2F009166AD /* Login Screen */ = {
+		3A7620AE25EEDC2F009166AD /* LoginRegister Screen */ = {
 			isa = PBXGroup;
 			children = (
 				3A7620AF25EEDC2F009166AD /* Login.storyboard */,
 				3A7620B125EEDC2F009166AD /* LoginViewController.swift */,
 			);
-			path = "Login Screen";
+			path = "LoginRegister Screen";
 			sourceTree = "<group>";
 		};
 		3A7620B225EEDC2F009166AD /* Managers */ = {
@@ -222,9 +223,7 @@
 		3A7620C425EEDC53009166AD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3A7620C525EEDC53009166AD /* CharacterDetailsViewController.swift */,
 				3A7620C625EEDC53009166AD /* MainViewController.swift */,
-				3A7620C725EEDC53009166AD /* EpisodeDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -239,13 +238,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		3AE59FD325EEE710000EAF30 /* Characters Screen */ = {
+		3AE59FD325EEE710000EAF30 /* Characters Flow */ = {
 			isa = PBXGroup;
 			children = (
 				3AE59FD925EEE810000EAF30 /* Characters.storyboard */,
 				3AE59FD425EEE730000EAF30 /* CharactersViewController.swift */,
+				3A7620C525EEDC53009166AD /* CharacterDetailsViewController.swift */,
 			);
-			path = "Characters Screen";
+			path = "Characters Flow";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
