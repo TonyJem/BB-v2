@@ -33,6 +33,7 @@
 		3A7620D525EEDDCA009166AD /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7620D325EEDDCA009166AD /* Account.swift */; };
 		3AE59FC625EEDEB3000EAF30 /* SeasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE59FC525EEDEB3000EAF30 /* SeasonModel.swift */; };
 		3AE59FCB25EEDF04000EAF30 /* SwiftKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE59FCA25EEDF04000EAF30 /* SwiftKeychain.swift */; };
+		3AE59FD025EEE231000EAF30 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE59FCF25EEE231000EAF30 /* CharacterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		3A7620D325EEDDCA009166AD /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		3AE59FC525EEDEB3000EAF30 /* SeasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonModel.swift; sourceTree = "<group>"; };
 		3AE59FCA25EEDF04000EAF30 /* SwiftKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftKeychain.swift; sourceTree = "<group>"; };
+		3AE59FCF25EEE231000EAF30 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			children = (
 				3A7620D325EEDDCA009166AD /* Account.swift */,
 				3AE59FC525EEDEB3000EAF30 /* SeasonModel.swift */,
+				3AE59FCF25EEE231000EAF30 /* CharacterModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				3A7620BC25EEDC2F009166AD /* AccountManager.swift in Sources */,
 				3A7620B925EEDC2F009166AD /* HomeViewController.swift in Sources */,
 				3AE59FCB25EEDF04000EAF30 /* SwiftKeychain.swift in Sources */,
+				3AE59FD025EEE231000EAF30 /* CharacterModel.swift in Sources */,
 				3A7620BD25EEDC2F009166AD /* UserDefaultsManager.swift in Sources */,
 				3A7620A025EEDBA5009166AD /* Character.swift in Sources */,
 				3A76209F25EEDBA5009166AD /* APIError.swift in Sources */,
