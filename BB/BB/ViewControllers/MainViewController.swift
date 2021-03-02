@@ -26,12 +26,12 @@ class MainViewController: UIViewController {
         EpisodesStoryboard.instantiateViewController(identifier: "Episodes")
     }
     
-    private var CharactersNavigationController: UINavigationController {
-        CharactersStoryboard.instantiateViewController(identifier: "Characters")
-    }
-    
     private var EpisodeDetailsViewController: UIViewController {
         EpisodesStoryboard.instantiateViewController(identifier: "EpisodeDetailsVC")
+    }
+    
+    private var CharactersNavigationController: UINavigationController {
+        CharactersStoryboard.instantiateViewController(identifier: "Characters")
     }
     
 }
