@@ -1,6 +1,6 @@
 import UIKit
 
-class EpisodesViewController: UIViewController {
+class EpisodesViewController: MainViewController {
 
     @IBOutlet private var seasonsTableView: UITableView!
     
@@ -15,6 +15,7 @@ class EpisodesViewController: UIViewController {
     
     @IBAction func filterButtonTap(_ sender: UIBarButtonItem) {
         print("🟢 Filter button is tapped")
+        proceedToEpisodesDetails()
     }
     
 }

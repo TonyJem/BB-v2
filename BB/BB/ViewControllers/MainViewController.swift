@@ -30,6 +30,10 @@ class MainViewController: UIViewController {
         CharactersStoryboard.instantiateViewController(identifier: "Characters")
     }
     
+    private var EpisodeDetailsViewController: UIViewController {
+        EpisodesStoryboard.instantiateViewController(identifier: "EpisodeDetailsVC")
+    }
+    
 }
 
 // MARK: - Transitions
@@ -46,9 +50,18 @@ extension MainViewController {
         present(EpisodesNavigationController, animated: true)
     }
     
+    func proceedToEpisodesDetails() {
+        modalPresentationStyle = .fullScreen
+        present(EpisodeDetailsViewController, animated: true)
+    }
+    
     func proceedToCharactersScene() {
         modalPresentationStyle = .fullScreen
         present(CharactersNavigationController, animated: true)
     }
+    
+    
+    
+//    EpisodeDetails
     
 }

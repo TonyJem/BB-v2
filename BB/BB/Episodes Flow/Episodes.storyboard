@@ -48,7 +48,7 @@
         <!--Episode Details View Controller-->
         <scene sceneID="3GO-cQ-v7c">
             <objects>
-                <viewController id="veS-hj-A32" customClass="EpisodeDetailsViewController" customModule="BB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EpisodeDetailsVC" id="veS-hj-A32" customClass="EpisodeDetailsViewController" customModule="BB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d60-Ln-r61">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,34 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dkn-ty-17W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1755.072463768116" y="168.75"/>
-        </scene>
-        <!--Character Details View Controller-->
-        <scene sceneID="iRm-Nf-oSE">
-            <objects>
-                <viewController id="maa-YE-I2A" customClass="CharacterDetailsViewController" customModule="BB" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7bv-fr-Qob">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pfc-C9-qDC">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="NqG-56-lRX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Pfc-C9-qDC" firstAttribute="top" secondItem="7bv-fr-Qob" secondAttribute="top" id="75k-PB-q0H"/>
-                            <constraint firstAttribute="bottom" secondItem="Pfc-C9-qDC" secondAttribute="bottom" id="Fq0-ux-Qff"/>
-                            <constraint firstItem="Pfc-C9-qDC" firstAttribute="trailing" secondItem="NqG-56-lRX" secondAttribute="trailing" id="RZv-Y4-jbj"/>
-                            <constraint firstItem="Pfc-C9-qDC" firstAttribute="leading" secondItem="NqG-56-lRX" secondAttribute="leading" id="sJh-pW-QJH"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mm7-tz-xPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2455.072463768116" y="168.75"/>
+            <point key="canvasLocation" x="1948" y="169"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aaa-OV-7cG">
