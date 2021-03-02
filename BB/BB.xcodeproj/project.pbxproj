@@ -33,6 +33,7 @@
 		3A7620CB25EEDC53009166AD /* EpisodeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7620C725EEDC53009166AD /* EpisodeDetailsViewController.swift */; };
 		3A7620D525EEDDCA009166AD /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7620D325EEDDCA009166AD /* Account.swift */; };
 		3AE59FC625EEDEB3000EAF30 /* SeasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE59FC525EEDEB3000EAF30 /* SeasonModel.swift */; };
+		3AE59FCB25EEDF04000EAF30 /* SwiftKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE59FCA25EEDF04000EAF30 /* SwiftKeychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		3A7620C725EEDC53009166AD /* EpisodeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewController.swift; sourceTree = "<group>"; };
 		3A7620D325EEDDCA009166AD /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		3AE59FC525EEDEB3000EAF30 /* SeasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonModel.swift; sourceTree = "<group>"; };
+		3AE59FCA25EEDF04000EAF30 /* SwiftKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftKeychain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				3A76208625EED9F8009166AD /* Assets.xcassets */,
+				3AE59FCA25EEDF04000EAF30 /* SwiftKeychain.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				3A76207E25EED9F7009166AD /* AppDelegate.swift in Sources */,
 				3A7620BC25EEDC2F009166AD /* AccountManager.swift in Sources */,
 				3A7620B925EEDC2F009166AD /* HomeViewController.swift in Sources */,
+				3AE59FCB25EEDF04000EAF30 /* SwiftKeychain.swift in Sources */,
 				3A7620BD25EEDC2F009166AD /* UserDefaultsManager.swift in Sources */,
 				3A7620A025EEDBA5009166AD /* Character.swift in Sources */,
 				3A76209F25EEDBA5009166AD /* APIError.swift in Sources */,
