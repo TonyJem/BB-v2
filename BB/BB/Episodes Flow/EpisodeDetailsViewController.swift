@@ -4,17 +4,33 @@ class EpisodeDetailsViewController: UIViewController {
     
     @IBOutlet weak private var episodeDetailsTableView: UITableView!
     
+    @IBOutlet weak private var headerContainerView: UIView!
+    @IBOutlet weak private var episodeTitleLabel: UILabel!
+    @IBOutlet weak private var seasonAndEpisodeNumberLabel: UILabel!
+    @IBOutlet weak private var airDateLabel: UILabel!
+    
     var episode: Episode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        episodeDetailsTableView.register(UINib(nibName: String(describing: EpisodeDetailsHeader.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: EpisodeDetailsHeader.self))
-        
         episodeDetailsTableView.dataSource = self
         episodeDetailsTableView.tableFooterView = UIView()
         
+        if let episode = episode {
+            fillContent(for: episode)
+        }
+        
     }
+    
+    private func fillContent(for episode: Episode) {
+        episodeTitleLabel.text = episode.title
+        let seasonNumberText = "Season \(episode.seasonNumber), "
+        let episodeNumberText = "Episode \(episode.episodeNumber)"
+        seasonAndEpisodeNumberLabel.text = seasonNumberText + episodeNumberText
+        airDateLabel.text = episode.airDate
+    }
+    
 }
 
 extension EpisodeDetailsViewController: UITableViewDataSource {
@@ -33,19 +49,6 @@ extension EpisodeDetailsViewController: UITableViewDataSource {
         return cell
     }
     
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let headerView = UIView()
-        
-        let headerCell = tableView.dequeueReusableCell(withIdentifier: "EpisodeDetailsHeader") as! EpisodeDetailsHeader
-        
-        guard let episode = episode else { return headerView }
-        headerCell.fillContent(for: episode)
-        headerView.addSubview(headerCell)
-        return headerView
-    }
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -54,16 +57,4 @@ extension EpisodeDetailsViewController: UITableViewDataSource {
         return "Characters"
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 200
-        }
-    
 }
-/*
-func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        let headerCell = tableView.dequeueReusableCell(withIdentifier: "customTableCell") as! CustomTableCell
-        headerView.addSubview(headerCell)
-        return headerView
-    }
-*/
