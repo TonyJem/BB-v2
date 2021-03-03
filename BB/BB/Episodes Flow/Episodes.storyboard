@@ -39,6 +39,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="seasonsTableView" destination="FNV-1F-hhE" id="RGX-up-eAY"/>
+                        <segue destination="veS-hj-A32" kind="show" identifier="showEpisodeDetailView" id="0iV-6W-kSb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15U-SV-yvz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -67,6 +68,7 @@
                             <constraint firstItem="A73-aV-RwT" firstAttribute="trailing" secondItem="U0P-YQ-VHh" secondAttribute="trailing" id="RX0-9t-RrC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="94p-h0-yeK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dkn-ty-17W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

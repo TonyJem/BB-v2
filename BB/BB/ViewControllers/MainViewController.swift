@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
         EpisodesStoryboard.instantiateViewController(identifier: "Episodes")
     }
     
+    //    TODO: Kol kas nenaudojamas
     private var EpisodeDetailsViewController: UIViewController {
         EpisodesStoryboard.instantiateViewController(identifier: "EpisodeDetailsVC")
     }
@@ -50,6 +51,7 @@ extension MainViewController {
         present(EpisodesNavigationController, animated: true)
     }
     
+//    TODO: Kol kas nenaudojamas
     func proceedToEpisodesDetails() {
         modalPresentationStyle = .fullScreen
         present(EpisodeDetailsViewController, animated: true)
@@ -59,9 +61,5 @@ extension MainViewController {
         modalPresentationStyle = .fullScreen
         present(CharactersNavigationController, animated: true)
     }
-    
-    
-    
-//    EpisodeDetails
     
 }

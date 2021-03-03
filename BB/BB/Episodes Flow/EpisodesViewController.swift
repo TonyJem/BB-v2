@@ -6,6 +6,8 @@ class EpisodesViewController: MainViewController {
     
     private let model = Core.Seasons
     
+    var selectedIndex = IndexPath()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,15 +50,22 @@ extension EpisodesViewController: UITableViewDataSource {
         cell.fillContent(selectedEpisode: episode)
         return cell
     }
+    
 }
 
 extension EpisodesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        proceedToEpisodesDetails()
+        
+        selectedIndex = indexPath
+        performSegue(withIdentifier: "showEpisodeDetailView", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if (segue.identifier == "showEpisodeDetailView") {
+                let destinationVC = segue.destination as! EpisodeDetailsViewController
+                destinationVC.episodeID = 15
+            }
+        }
 }
-
-
-
