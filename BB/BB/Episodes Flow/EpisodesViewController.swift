@@ -1,7 +1,7 @@
 import UIKit
 
 class EpisodesViewController: MainViewController {
-
+    
     @IBOutlet private var seasonsTableView: UITableView!
     
     private let model = Core.Seasons
@@ -11,13 +11,13 @@ class EpisodesViewController: MainViewController {
         
         seasonsTableView.register(UINib(nibName: String(describing: EpisodeTableViewCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: EpisodeTableViewCell.self))
         
+        seasonsTableView.delegate = self
         seasonsTableView.dataSource = self
         seasonsTableView.tableFooterView = UIView()
     }
     
     @IBAction func filterButtonTap(_ sender: UIBarButtonItem) {
         print("🟢 Filter button is tapped")
-        proceedToEpisodesDetails()
     }
     
 }
@@ -49,3 +49,14 @@ extension EpisodesViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension EpisodesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        proceedToEpisodesDetails()
+    }
+}
+
+
+
