@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="OGP-gr-n5M" customClass="EpisodeDetailsHeader" customModule="BB" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeDetailsHeader" id="OGP-gr-n5M" customClass="EpisodeDetailsHeader" customModule="BB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OGP-gr-n5M" id="iaZ-IA-Pxb">
@@ -80,10 +80,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="airDateLabel" destination="cNB-q5-f2Y" id="AtH-eT-IcQ"/>
-                <outlet property="episodeTitleLabel" destination="n4m-ws-Ksq" id="tC8-LF-4t2"/>
-                <outlet property="headerContainerView" destination="iaZ-IA-Pxb" id="9zH-cO-E1T"/>
-                <outlet property="seasonAndEpisodeNumberLabel" destination="Pjs-59-eYD" id="7Fm-Ys-two"/>
+                <outlet property="airDateLabel" destination="cNB-q5-f2Y" id="rMj-uw-aNO"/>
+                <outlet property="episodeTitleLabel" destination="n4m-ws-Ksq" id="ifs-7K-cFo"/>
+                <outlet property="headerContainerView" destination="eTd-li-HOI" id="0bK-Zv-r8W"/>
+                <outlet property="seasonAndEpisodeNumberLabel" destination="Pjs-59-eYD" id="81h-R2-aEZ"/>
             </connections>
             <point key="canvasLocation" x="260" y="99"/>
         </tableViewCell>

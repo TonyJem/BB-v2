@@ -1,7 +1,7 @@
 import UIKit
 
 class EpisodeDetailsViewController: UIViewController {
-
+    
     @IBOutlet weak private var episodeDetailsTableView: UITableView!
     
     var episode: Episode?
@@ -9,26 +9,10 @@ class EpisodeDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        episodeDetailsTableView.register(UINib(nibName: String(describing: EpisodeDetailsHeader.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: EpisodeDetailsHeader.self))
+        
         episodeDetailsTableView.dataSource = self
         episodeDetailsTableView.tableFooterView = UIView()
-        
-        guard let episode = episode else {
-            
-            print("🔴 Somethig went wrong with getting episode")
-            return
-        }
-        
-        let title = episode.title
-        let seasonNumber = episode.seasonNumber
-        let episodeNumber = episode.episodeNumber
-        let airDate = episode.airDate
-        let characters = episode.characters
-        
-        print("🟢 title \(title)")
-        print("🟢 seasonNumber \(seasonNumber)")
-        print("🟢 episodeNumber \(episodeNumber)")
-        print("🟢 airDate \(airDate)")
-        print("🟢 1st chracter from characters: \(characters[0])")
         
     }
 }
@@ -49,6 +33,19 @@ extension EpisodeDetailsViewController: UITableViewDataSource {
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = UIView()
+        
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "EpisodeDetailsHeader") as! EpisodeDetailsHeader
+        
+        guard let episode = episode else { return headerView }
+        headerCell.fillContent(for: episode)
+        headerView.addSubview(headerCell)
+        return headerView
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -57,4 +54,16 @@ extension EpisodeDetailsViewController: UITableViewDataSource {
         return "Characters"
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return 200
+        }
+    
 }
+/*
+func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "customTableCell") as! CustomTableCell
+        headerView.addSubview(headerCell)
+        return headerView
+    }
+*/
