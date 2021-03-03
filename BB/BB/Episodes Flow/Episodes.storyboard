@@ -69,6 +69,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="94p-h0-yeK"/>
+                    <connections>
+                        <outlet property="episodeDetailsTableView" destination="A73-aV-RwT" id="LUE-6d-wv4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dkn-ty-17W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

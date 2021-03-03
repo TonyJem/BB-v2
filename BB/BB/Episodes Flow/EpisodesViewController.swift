@@ -65,7 +65,12 @@ extension EpisodesViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if (segue.identifier == "showEpisodeDetailView") {
                 let destinationVC = segue.destination as! EpisodeDetailsViewController
-                destinationVC.episodeID = 15
+                
+                let seasonNumber = model.seasonNumbers[selectedIndex.section]
+                let season = model.seasonBy(seasonNumber: seasonNumber)
+                let episode = season[selectedIndex.row]
+                
+                destinationVC.episode = episode
             }
         }
 }
