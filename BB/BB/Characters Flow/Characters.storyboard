@@ -39,6 +39,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="charactersTableView" destination="FNV-1F-hhE" id="FHb-3K-wTw"/>
+                        <segue destination="O78-3J-Xij" kind="show" identifier="showCharacterFromCharacters" id="Twl-XC-hrZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15U-SV-yvz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -63,10 +64,43 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="168.75"/>
         </scene>
+        <!--Character Details View Controller-->
+        <scene sceneID="7v3-cZ-1HG">
+            <objects>
+                <viewController id="O78-3J-Xij" customClass="CharacterDetailsViewController" customModule="BB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CYA-7C-gtx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zI-TI-x4a" customClass="testView" customModule="BB" customModuleProvider="target">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="TGJ-Cr-6y5"/>
+                                    <constraint firstAttribute="width" constant="240" id="fzC-yh-0aH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zug-8e-3CA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8zI-TI-x4a" firstAttribute="centerX" secondItem="CYA-7C-gtx" secondAttribute="centerX" id="HM6-ec-gK4"/>
+                            <constraint firstItem="8zI-TI-x4a" firstAttribute="centerY" secondItem="CYA-7C-gtx" secondAttribute="centerY" id="ODS-7b-RZv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7qK-JQ-bpm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9wL-08-zJp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1854" y="169"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
