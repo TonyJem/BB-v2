@@ -6,7 +6,7 @@ class EpisodesViewController: MainViewController {
     
     private let model = Core.Seasons
     
-    var selectedIndex = IndexPath()
+    private var selectedIndex = IndexPath()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,4 +73,5 @@ extension EpisodesViewController: UITableViewDelegate {
                 destinationVC.episode = episode
             }
         }
+    
 }

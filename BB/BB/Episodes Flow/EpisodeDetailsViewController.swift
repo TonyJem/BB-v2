@@ -11,10 +11,14 @@ class EpisodeDetailsViewController: UIViewController {
     
     var episode: Episode?
     
+    private var selectedIndex = IndexPath()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         episodeDetailsTableView.dataSource = self
+        episodeDetailsTableView.delegate = self
+        
         episodeDetailsTableView.tableFooterView = UIView()
         
         if let episode = episode {
@@ -55,6 +59,25 @@ extension EpisodeDetailsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Characters"
+    }
+    
+}
+
+extension EpisodeDetailsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        selectedIndex = indexPath
+        performSegue(withIdentifier: "showCharacterDetailView", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showCharacterDetailView") {
+            let destinationVC = segue.destination as! EpisodesCharacterDetailsViewController
+            guard let episode = episode  else { return }
+            let character = episode.characters[selectedIndex.row]
+            destinationVC.characters = character
+        }
     }
     
 }
