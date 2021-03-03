@@ -79,6 +79,12 @@
                     <constraint firstItem="eTd-li-HOI" firstAttribute="top" secondItem="iaZ-IA-Pxb" secondAttribute="top" id="rtX-0U-M1g"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="airDateLabel" destination="cNB-q5-f2Y" id="AtH-eT-IcQ"/>
+                <outlet property="episodeTitleLabel" destination="n4m-ws-Ksq" id="tC8-LF-4t2"/>
+                <outlet property="headerContainerView" destination="iaZ-IA-Pxb" id="9zH-cO-E1T"/>
+                <outlet property="seasonAndEpisodeNumberLabel" destination="Pjs-59-eYD" id="7Fm-Ys-two"/>
+            </connections>
             <point key="canvasLocation" x="260" y="99"/>
         </tableViewCell>
     </objects>
