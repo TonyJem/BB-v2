@@ -9,6 +9,8 @@ class EpisodesViewController: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        seasonsTableView.register(UINib(nibName: String(describing: EpisodeTableViewCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: EpisodeTableViewCell.self))
+        
         seasonsTableView.dataSource = self
         seasonsTableView.tableFooterView = UIView()
     }
@@ -38,11 +40,12 @@ extension EpisodesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        
+        guard let cell = seasonsTableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else { return UITableViewCell() }
         let seasonNumber = model.seasonNumbers[indexPath.section]
         let season = model.seasonBy(seasonNumber: seasonNumber)
         let episode = season[indexPath.row]
-        cell.textLabel?.text = episode.title
+        cell.fillContent(selectedEpisode: episode)
         return cell
     }
 }

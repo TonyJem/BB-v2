@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EpisodeTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIO-LU-bLP">
-                                <rect key="frame" x="15" y="10" width="99.5" height="40"/>
+                                <rect key="frame" x="25" y="10" width="99.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="deu-Za-XGc"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FIO-LU-bLP" firstAttribute="leading" secondItem="B6b-LC-zpQ" secondAttribute="leading" constant="15" id="Afz-Rr-VhW"/>
+                            <constraint firstItem="FIO-LU-bLP" firstAttribute="leading" secondItem="B6b-LC-zpQ" secondAttribute="leading" constant="25" id="Afz-Rr-VhW"/>
                             <constraint firstItem="5Xx-Pk-mqr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FIO-LU-bLP" secondAttribute="trailing" constant="15" id="RmX-WF-kEP"/>
                             <constraint firstAttribute="trailing" secondItem="5Xx-Pk-mqr" secondAttribute="trailing" constant="15" id="Ytk-us-bb8"/>
                             <constraint firstItem="5Xx-Pk-mqr" firstAttribute="centerY" secondItem="B6b-LC-zpQ" secondAttribute="centerY" id="f8u-u5-kIe"/>
@@ -56,6 +56,11 @@
                     <constraint firstAttribute="trailing" secondItem="B6b-LC-zpQ" secondAttribute="trailing" id="rx1-iB-TCk"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="B6b-LC-zpQ" id="YfM-1n-SBG"/>
+                <outlet property="episodeNumberTitle" destination="5Xx-Pk-mqr" id="3YW-Wm-QOD"/>
+                <outlet property="episodeTitleLabel" destination="FIO-LU-bLP" id="CDS-C3-lKM"/>
+            </connections>
             <point key="canvasLocation" x="145" y="59"/>
         </tableViewCell>
     </objects>
