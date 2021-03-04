@@ -6,6 +6,4 @@ class quoteCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-
-
 }
