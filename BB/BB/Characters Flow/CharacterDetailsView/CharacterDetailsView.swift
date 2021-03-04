@@ -9,6 +9,26 @@ class CharacterDetailsView: UIView {
     private var quotesView: UIView!
     private var xibName: String = "CharacterDetailsView"
     
+    var nameLabelText: String {
+        get {
+            guard let text = nameLabel.text else { return "" }
+            return text
+        }
+        set(nameLabelText) {
+            nameLabel.text = nameLabelText
+        }
+    }
+    
+    var birthdayLabelText: String {
+        get {
+            guard let text = birthdayLabel.text else { return "" }
+            return text
+        }
+        set(birthdayLabelText) {
+            birthdayLabel.text = birthdayLabelText
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setQuotesView()
