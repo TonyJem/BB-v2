@@ -47,6 +47,7 @@
 		3AE5A01B25F069E0000EAF30 /* quoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5A01A25F069E0000EAF30 /* quoteCell.xib */; };
 		3AE5A01F25F12117000EAF30 /* Quotes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5A01E25F12117000EAF30 /* Quotes.storyboard */; };
 		3AE5A02225F1215A000EAF30 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5A02125F1215A000EAF30 /* QuotesViewController.swift */; };
+		3AE5A02625F12573000EAF30 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5A02525F12573000EAF30 /* QuoteModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		3AE5A01A25F069E0000EAF30 /* quoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = quoteCell.xib; sourceTree = "<group>"; };
 		3AE5A01E25F12117000EAF30 /* Quotes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quotes.storyboard; sourceTree = "<group>"; };
 		3AE5A02125F1215A000EAF30 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
+		3AE5A02525F12573000EAF30 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 				3A7620D325EEDDCA009166AD /* Account.swift */,
 				3AE59FC525EEDEB3000EAF30 /* SeasonModel.swift */,
 				3AE59FCF25EEE231000EAF30 /* CharacterModel.swift */,
+				3AE5A02525F12573000EAF30 /* QuoteModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE5A02625F12573000EAF30 /* QuoteModel.swift in Sources */,
 				3A7620BF25EEDC2F009166AD /* String+Extension.swift in Sources */,
 				3A7620BB25EEDC2F009166AD /* LoginViewController.swift in Sources */,
 				3AE5A02225F1215A000EAF30 /* QuotesViewController.swift in Sources */,
