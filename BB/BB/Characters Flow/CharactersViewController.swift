@@ -47,36 +47,8 @@ extension CharactersViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showCharacterFromCharacters") {
             let destinationVC = segue.destination as! CharacterDetailsViewController
-            destinationVC.character = "TestCharacterName"
+            destinationVC.character = model.characters[selectedIndex.row]
         }
     }
     
 }
-
-
-
-//showCharacterFromCharacters
-
-
-/*
- 
- extension EpisodeDetailsViewController: UITableViewDelegate {
-     
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         tableView.deselectRow(at: indexPath, animated: true)
-         selectedIndex = indexPath
-         performSegue(withIdentifier: "showCharacterDetailView", sender: nil)
-     }
-     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         if (segue.identifier == "showCharacterDetailView") {
-             let destinationVC = segue.destination as! EpisodesCharacterDetailsViewController
-             guard let episode = episode  else { return }
-             let character = episode.characters[selectedIndex.row]
-             destinationVC.characters = character
-         }
-     }
- 
- 
- 
- */

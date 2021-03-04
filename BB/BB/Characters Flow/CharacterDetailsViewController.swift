@@ -4,15 +4,14 @@ class CharacterDetailsViewController: UIViewController {
     
     @IBOutlet weak private var characterDetailsContainerView: CharacterDetailsView!
     
-    var character: String?
+    var character: Character?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let character = character {
-            print("🟢 character: \(character)")
-            characterDetailsContainerView.nameLabelText = character
-            characterDetailsContainerView.birthdayLabelText = "Test Birthday"
+            characterDetailsContainerView.nameLabelText = character.name
+            characterDetailsContainerView.birthdayLabelText = character.birthday
         }
     }
     
