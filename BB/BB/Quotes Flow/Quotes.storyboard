@@ -31,6 +31,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Quotes" id="VyO-HW-gDt"/>
+                    <connections>
+                        <outlet property="quotesTableview" destination="Mm0-Nw-55p" id="qzv-5P-jOl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xt6-po-QBr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

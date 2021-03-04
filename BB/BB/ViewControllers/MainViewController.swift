@@ -16,6 +16,10 @@ class MainViewController: UIViewController {
         UIStoryboard(name: "Characters", bundle: nil)
     }()
     
+    private lazy var QuotesStoryboard: UIStoryboard = {
+        UIStoryboard(name: "Quotes", bundle: nil)
+    }()
+    
 // MARK: - Controllers
     
     private var HomeViewController: UIViewController {
@@ -33,6 +37,10 @@ class MainViewController: UIViewController {
     
     private var CharactersNavigationController: UINavigationController {
         CharactersStoryboard.instantiateViewController(identifier: "Characters")
+    }
+    
+    private var QuotesNavigationController: UINavigationController {
+        QuotesStoryboard.instantiateViewController(identifier: "Quotes")
     }
     
 }
@@ -60,6 +68,11 @@ extension MainViewController {
     func proceedToCharactersScene() {
         modalPresentationStyle = .fullScreen
         present(CharactersNavigationController, animated: true)
+    }
+    
+    func proceedToQuotesScene() {
+        modalPresentationStyle = .fullScreen
+        present(QuotesNavigationController, animated: true)
     }
     
 }

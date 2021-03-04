@@ -18,7 +18,8 @@ class HomeViewController: MainViewController {
         
         guard let loggedInAccount = AccountManager.loggedInAccount else { return }
         usernameLabel.text = loggedInAccount.username
-        quotesButton.isEnabled = !loggedInAccount.favouriteQuotes.isEmpty
+//        TODO: switched off for test reasons
+//        quotesButton.isEnabled = !loggedInAccount.favouriteQuotes.isEmpty
         
     }
     
@@ -34,6 +35,7 @@ class HomeViewController: MainViewController {
     
     @IBAction private func quotesButtonTapped(_ sender: UIButton) {
         print("🟢 quotesButtonDidTap")
+        proceedToQuotesScene()
     }
     
     @IBAction private func logoutButtonTapped(_ sender: UIButton) {
