@@ -1,11 +1,5 @@
 import Foundation
 
-struct Quote: Codable  {
-    var text: String
-    var isLiked: Bool = false
-}
-
-
 class QuoteModel {
 
     var top3Quotes: [Quote] = [ Quote(text: "TestTopQuotes1"),
