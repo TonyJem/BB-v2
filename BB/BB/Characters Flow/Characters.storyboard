@@ -72,20 +72,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zI-TI-x4a" customClass="testView" customModule="BB" customModuleProvider="target">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="TGJ-Cr-6y5"/>
-                                    <constraint firstAttribute="width" constant="240" id="fzC-yh-0aH"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="do6-WN-du3" customClass="CharacterDetailsView" customModule="BB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zug-8e-3CA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8zI-TI-x4a" firstAttribute="centerX" secondItem="CYA-7C-gtx" secondAttribute="centerX" id="HM6-ec-gK4"/>
-                            <constraint firstItem="8zI-TI-x4a" firstAttribute="centerY" secondItem="CYA-7C-gtx" secondAttribute="centerY" id="ODS-7b-RZv"/>
+                            <constraint firstItem="zug-8e-3CA" firstAttribute="bottom" secondItem="do6-WN-du3" secondAttribute="bottom" id="3Ic-mD-RzM"/>
+                            <constraint firstItem="do6-WN-du3" firstAttribute="leading" secondItem="zug-8e-3CA" secondAttribute="leading" id="QbI-Sp-Sfx"/>
+                            <constraint firstItem="do6-WN-du3" firstAttribute="top" secondItem="zug-8e-3CA" secondAttribute="top" id="bhc-oG-4WP"/>
+                            <constraint firstItem="zug-8e-3CA" firstAttribute="trailing" secondItem="do6-WN-du3" secondAttribute="trailing" id="tXF-LE-Vpg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7qK-JQ-bpm"/>
@@ -99,8 +97,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
