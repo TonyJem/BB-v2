@@ -60,5 +60,9 @@ extension APIManager {
         }.resume()
     }
     
+    func getRandomQuote() {
+        
+    }
+    
 }
  
