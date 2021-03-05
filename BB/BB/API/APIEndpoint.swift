@@ -3,6 +3,7 @@ import Foundation
 enum APIEndpoint {
     case episodes
     case characters
+    case quotes
  
     var url: URL? {
         switch self {
@@ -10,6 +11,8 @@ enum APIEndpoint {
             return makeURL(endpoint: "episodes/")
         case .characters:
             return makeURL(endpoint: "characters/")
+        case .quotes:
+            return makeURL(endpoint: "quotes/")
         }
     }
 }
