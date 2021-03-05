@@ -4,29 +4,18 @@ class QuoteModel {
     
     var quotes = [Quote]()
     
-    var randomQuote: Quote?
+    var randomQuote = Quote(id: 0, text: "No Random Quote", author: "", series: "", isLiked: false)
     
     var top3Quotes: [Quote] = [ Quote(id: 1, text: "TopQuote1", author: "Author1", series: "BB", isLiked: true),
                                 Quote(id: 2, text: "TopYourQuote2", author: "Author1", series: "BB", isLiked: true),
                                 Quote(id: 3, text: "TopYourQuote3", author: "Author1", series: "BB", isLiked: true) ]
     
-    var yourQuotesTest: [Quote] = [ Quote(id: 4, text: "TestYourQuote1", author: "Author1", series: "BB", isLiked: true),
-                                    Quote(id: 5, text: "TestYourQuote2", author: "Author2", series: "BB", isLiked: true),
-                                    Quote(id: 6, text: "TestYourQuote3", author: "Author3", series: "BB", isLiked: true),
-                                    Quote(id: 7, text: "TestYourQuote4", author: "Author4", series: "BB", isLiked: true),
-                                    Quote(id: 8, text: "TestYourQuote5", author: "Author5", series: "BB", isLiked: true),
-                                    Quote(id: 9, text: "TestYourQuote6", author: "Author6", series: "BB", isLiked: true) ]
     var likedQuotes = [Quote]()
     
     var tableQuotes = [[Quote]]()
     
-    var randomQuoteTest = Quote(id: 10, text: "RandomeQuoteTest", author: "Author1", series: "BB", isLiked: true)
-    
     func generateRandomQuote() {
-        guard let randomlyGeneratedQuote = quotes.randomElement() else {
-            randomQuote = nil
-            return
-        }
+        guard let randomlyGeneratedQuote = quotes.randomElement() else { return }
         randomQuote = randomlyGeneratedQuote
     }
     
@@ -45,42 +34,44 @@ class QuoteModel {
             print("🔴 Do not select Top2 Yet!")
             
         case 1:
-            guard let quoteIsLiked = quotes[row].isLiked else {
-                quotes[row].isLiked = true
+            guard let quoteIsLiked = likedQuotes[row].isLiked else {
+                likedQuotes[row].isLiked = true
+                likedQuotes.append(likedQuotes[row])
+                return
+            }
+
+            if quoteIsLiked {
+                likedQuotes[row].isLiked = false
+                if likedQuotes[row].text == randomQuote.text {
+                    randomQuote.isLiked = false
+                }
+                likedQuotes = likedQuotes.filter(){$0.text != likedQuotes[row].text}
+            } else {
+                likedQuotes[row].isLiked = true
                 likedQuotes.append(quotes[row])
-                printCurrentResults(for: quotes[row])
+            }
+
+            
+        case 2:
+            guard let quoteIsLiked = randomQuote.isLiked else {
+                randomQuote.isLiked = true
+                likedQuotes.append(randomQuote)
                 return
             }
             
             if quoteIsLiked {
-                quotes[row].isLiked = false
-                likedQuotes = likedQuotes.filter(){$0.text != quotes[row].text}
+                randomQuote.isLiked = false
+                likedQuotes = likedQuotes.filter(){$0.text != randomQuote.text}
             } else {
-                quotes[row].isLiked = true
-                likedQuotes.append(quotes[row])
+                randomQuote.isLiked = true
+                likedQuotes.append(randomQuote)
             }
-            printCurrentResults(for: quotes[row])
-            
-        case 2:
-            // TODO:
-            print("🔴 Do not select Random Yet!")
-            
-            
             
         default:
             // TODO:
             print("🔴 Default is selected for some reason!")
         }
         
-        
-    }
-    
-    private func printCurrentResults(for selectedQuote: Quote) {
-        print("🟢 QuoteText Is: \(selectedQuote.text)")
-        print("🟡 SelectedQuote isLiked: \(String(describing: selectedQuote.isLiked))")
-        for quote in likedQuotes {
-            print("🟣 All liked quotes: \(quote.text)")
-        }
     }
     
 }

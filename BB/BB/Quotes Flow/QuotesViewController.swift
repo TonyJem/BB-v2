@@ -42,7 +42,7 @@ extension QuotesViewController: UITableViewDataSource {
         case 0:
             return quoteModel.top3Quotes.count
         case 1:
-            return quoteModel.quotes.count
+            return quoteModel.likedQuotes.count
         case 2:
             return 1
         default:
@@ -57,14 +57,10 @@ extension QuotesViewController: UITableViewDataSource {
             cell.fillContent(with: quoteModel.top3Quotes[indexPath.row])
             return cell
         case 1:
-            cell.fillContent(with: quoteModel.quotes[indexPath.row])
+            cell.fillContent(with: quoteModel.likedQuotes[indexPath.row])
             return cell
         case 2:
-            if let randomQuote = quoteModel.randomQuote {
-                cell.fillContent(with: randomQuote)
-            } else {
-                cell.textLabel?.text = "No quotes to show!"
-            }
+            cell.fillContent(with: quoteModel.randomQuote)
             return cell
         default:
             return UITableViewCell()
