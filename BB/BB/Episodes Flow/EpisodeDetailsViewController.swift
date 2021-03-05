@@ -76,7 +76,7 @@ extension EpisodeDetailsViewController: UITableViewDelegate {
             let destinationVC = segue.destination as! EpisodesCharacterDetailsViewController
             guard let episode = episode  else { return }
             let character = episode.characters[selectedIndex.row]
-            destinationVC.characters = character
+            destinationVC.characterName = character
         }
     }
     
