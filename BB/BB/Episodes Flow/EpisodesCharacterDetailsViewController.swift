@@ -14,6 +14,7 @@ class EpisodesCharacterDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         characterDetailsContainerView.quotesTableView.dataSource = self
+        characterDetailsContainerView.quotesTableView.tableFooterView = UIView()
         
         guard let characterName = characterName else { return }
         

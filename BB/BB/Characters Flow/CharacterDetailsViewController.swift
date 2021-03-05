@@ -12,6 +12,7 @@ class CharacterDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         characterDetailsContainerView.quotesTableView.dataSource = self
+        characterDetailsContainerView.quotesTableView.tableFooterView = UIView()
         
         guard let character = character else { return }
         characterDetailsContainerView.nameLabelText = character.name
