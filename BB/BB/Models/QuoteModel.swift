@@ -1,6 +1,15 @@
 import Foundation
 
 class QuoteModel {
+    
+    var allQuotes = [Quote]()
+    
+    var quotes: [Quote] {
+        let filteredQuotes = allQuotes.filter { quote in
+            return quote.series == "Breaking Bad"
+        }
+        return filteredQuotes
+    }
 
     var top3Quotes: [Quote] = [ Quote(id: 1, text: "TopQuote1", author: "Author1", series: "BB", isLiked: true),
                                 Quote(id: 2, text: "TopYourQuote2", author: "Author1", series: "BB", isLiked: true),

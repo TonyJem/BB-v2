@@ -12,6 +12,7 @@ class HomeViewController: MainViewController {
     private let apiManager = Core.ApiManager
     private let seasonModel = Core.Seasons
     private let characterModel = Core.Characters
+    private let quotesModel = Core.Quotes
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +72,8 @@ class HomeViewController: MainViewController {
         apiManager.getQuotes { result in
             switch result {
             case .success(let quotes):
-                print("All Quotes: \(quotes)")
+                print("🟢 All Quotes did fetch Ok!")
+                self.quotesModel.allQuotes = quotes
                 self.proceedToQuotesScene()
             case .failure(let error):
                 print("🔴 \(error)")
