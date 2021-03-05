@@ -59,16 +59,13 @@ extension QuotesViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             cell.fillContent(with: quoteModel.top3Quotes[indexPath.row])
-//            cell.textLabel?.text = quoteModel.top3Quotes[indexPath.row].text
             return cell
         case 1:
-            cell.fillContent(with: quoteModel.yourQuotesTest[indexPath.row])
-//            cell.textLabel?.text = quoteModel.quotes[indexPath.row].text
+            cell.fillContent(with: quoteModel.quotes[indexPath.row])
             return cell
         case 2:
             if let randomQuote = quoteModel.randomQuote {
                 cell.fillContent(with: randomQuote)
-//                cell.textLabel?.text = randomQuote.text
             } else {
                 cell.textLabel?.text = "No quotes to show!"
             }

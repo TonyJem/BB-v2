@@ -7,12 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
-            <connections>
-                <outlet property="iconButton" destination="QnJ-aF-BVu" id="Doc-7x-sh4"/>
-                <outlet property="quoteTextLabel" destination="XsT-jU-gIN" id="C0T-ia-giA"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YfN-jp-J4y" customClass="quoteCell" customModule="BB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -27,22 +22,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HxY-ew-qSf">
                                 <rect key="frame" x="15" y="10" width="40" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnJ-aF-BVu">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55x-JU-0j9">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <state key="normal" image="unselectedHeart"/>
-                                        <connections>
-                                            <action selector="iconButtonTapped:" destination="-1" eventType="touchUpInside" id="9tZ-ge-4rh"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="QnJ-aF-BVu" secondAttribute="bottom" id="02e-o5-N0F"/>
-                                    <constraint firstItem="QnJ-aF-BVu" firstAttribute="leading" secondItem="HxY-ew-qSf" secondAttribute="leading" id="41e-tr-DlZ"/>
                                     <constraint firstAttribute="width" secondItem="HxY-ew-qSf" secondAttribute="height" id="FnP-s1-mCf"/>
-                                    <constraint firstItem="QnJ-aF-BVu" firstAttribute="top" secondItem="HxY-ew-qSf" secondAttribute="top" id="WGO-Oe-ybU"/>
+                                    <constraint firstItem="55x-JU-0j9" firstAttribute="leading" secondItem="HxY-ew-qSf" secondAttribute="leading" id="YQf-3u-cCG"/>
                                     <constraint firstAttribute="width" constant="40" id="Yso-94-Tay"/>
-                                    <constraint firstAttribute="trailing" secondItem="QnJ-aF-BVu" secondAttribute="trailing" id="pPj-4W-8Kj"/>
+                                    <constraint firstAttribute="bottom" secondItem="55x-JU-0j9" secondAttribute="bottom" id="aE8-l1-mpd"/>
+                                    <constraint firstItem="55x-JU-0j9" firstAttribute="top" secondItem="HxY-ew-qSf" secondAttribute="top" id="bC7-nQ-UIS"/>
+                                    <constraint firstAttribute="trailing" secondItem="55x-JU-0j9" secondAttribute="trailing" id="pAi-VY-tAy"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsT-jU-gIN">
@@ -54,10 +46,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="HxY-ew-qSf" firstAttribute="top" secondItem="4zw-fn-7pd" secondAttribute="top" constant="10" id="3vS-Af-Gdg"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XsT-jU-gIN" secondAttribute="trailing" constant="15" id="Qq5-FN-HUf"/>
                             <constraint firstItem="HxY-ew-qSf" firstAttribute="leading" secondItem="4zw-fn-7pd" secondAttribute="leading" constant="15" id="Tvy-au-CQs"/>
                             <constraint firstItem="XsT-jU-gIN" firstAttribute="leading" secondItem="HxY-ew-qSf" secondAttribute="trailing" id="XVU-pW-s6Z"/>
-                            <constraint firstItem="HxY-ew-qSf" firstAttribute="centerY" secondItem="4zw-fn-7pd" secondAttribute="centerY" id="b7c-U8-Lz7"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HxY-ew-qSf" secondAttribute="bottom" constant="10" id="hwd-9f-UbV"/>
                             <constraint firstAttribute="bottom" secondItem="XsT-jU-gIN" secondAttribute="bottom" constant="10" id="pJr-17-Mqh"/>
                             <constraint firstItem="XsT-jU-gIN" firstAttribute="top" secondItem="4zw-fn-7pd" secondAttribute="top" constant="15" id="tJv-Jk-lM8"/>
                         </constraints>
@@ -70,6 +63,9 @@
                     <constraint firstItem="4zw-fn-7pd" firstAttribute="leading" secondItem="Gpg-xq-Q41" secondAttribute="leading" id="pe4-TW-X7a"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="quoteTextLabel" destination="XsT-jU-gIN" id="dXg-eX-ddJ"/>
+            </connections>
             <point key="canvasLocation" x="-342.02898550724638" y="2.6785714285714284"/>
         </tableViewCell>
     </objects>
