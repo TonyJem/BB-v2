@@ -55,9 +55,3 @@ class CharacterDetailsView: UIView {
     }
     
 }
-
-/*
- 
- 
- 
- */

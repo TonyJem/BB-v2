@@ -10,7 +10,15 @@ class QuoteModel {
                                 Quote(id: 2, text: "TopYourQuote2", author: "Author1", series: "BB", isLiked: true),
                                 Quote(id: 3, text: "TopYourQuote3", author: "Author1", series: "BB", isLiked: true) ]
     
-    var likedQuotes = [Quote]()
+    var likedQuotes: [Quote] {
+        get {
+            guard let favouriteQuotes = AccountManager.loggedInAccount?.favouriteQuotes else { return [] }
+            return favouriteQuotes
+        }
+        set(likedQuotes) {
+            AccountManager.loggedInAccount?.favouriteQuotes = likedQuotes
+        }
+    }
     
     var tableQuotes = [[Quote]]()
     
@@ -39,7 +47,7 @@ class QuoteModel {
                 likedQuotes.append(likedQuotes[row])
                 return
             }
-
+            
             if quoteIsLiked {
                 likedQuotes[row].isLiked = false
                 if likedQuotes[row].text == randomQuote.text {
@@ -50,7 +58,7 @@ class QuoteModel {
                 likedQuotes[row].isLiked = true
                 likedQuotes.append(quotes[row])
             }
-
+            
             
         case 2:
             guard let quoteIsLiked = randomQuote.isLiked else {
