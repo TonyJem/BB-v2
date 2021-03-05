@@ -12,6 +12,7 @@ class HomeViewController: MainViewController {
     private let apiManager = Core.ApiManager
     private let seasonModel = Core.Seasons
     private let characterModel = Core.Characters
+    private let quotesModel = Core.Quotes
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ class HomeViewController: MainViewController {
     
     @IBAction private func quotesButtonTapped(_ sender: UIButton) {
         print("🟢 quotesButtonDidTap")
-        proceedToQuotesScene()
+        fetchQuotesToModel()
     }
     
     @IBAction private func logoutButtonTapped(_ sender: UIButton) {
@@ -61,6 +62,20 @@ class HomeViewController: MainViewController {
             case .success(let characters):
                 self.characterModel.characters = characters
                 self.proceedToCharactersScene()
+            case .failure(let error):
+                print("🔴 \(error)")
+            }
+        }
+    }
+    
+    private func fetchQuotesToModel() {
+        apiManager.getQuotes { result in
+            switch result {
+            case .success(let quotes):
+                print("🟢 All Quotes did fetch Ok!")
+                self.quotesModel.allQuotes = quotes
+                self.quotesModel.generateRandomQuote()
+                self.proceedToQuotesScene()
             case .failure(let error):
                 print("🔴 \(error)")
             }

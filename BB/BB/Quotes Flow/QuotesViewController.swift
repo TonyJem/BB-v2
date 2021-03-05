@@ -4,18 +4,16 @@ class QuotesViewController: UIViewController {
 
     @IBOutlet weak private var quotesTableview: UITableView!
     
-    private let model = QuoteModel()
+    private let model = Core.Quotes
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        quotesTableview.register(UINib(nibName: String(describing: quoteCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: quoteCell.self))
-        
+//        quotesTableview.register(UINib(nibName: String(describing: quoteCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: quoteCell.self))
         
         quotesTableview.dataSource = self
         quotesTableview.tableFooterView = UIView()
-        
-        
+
     }
 
 }
@@ -44,7 +42,7 @@ extension QuotesViewController: UITableViewDataSource {
         case 0:
             return model.top3Quotes.count
         case 1:
-            return model.yourQuotesTest.count
+            return model.quotes.count
         case 2:
             return 1
         default:
@@ -65,11 +63,15 @@ extension QuotesViewController: UITableViewDataSource {
             return cell
         case 1:
 //            cell.fillContent(with: model.yourQuotesTest[indexPath.row])
-            cell.textLabel?.text = model.yourQuotesTest[indexPath.row].text
+            cell.textLabel?.text = model.quotes[indexPath.row].text
             return cell
         case 2:
 //            cell.fillContent(with: model.randomQuote)
-            cell.textLabel?.text = model.randomQuote.text
+            if let randomQuote = model.randomQuote {
+                cell.textLabel?.text = randomQuote.text
+            } else {
+                cell.textLabel?.text = "No quotes to show!"
+            }
             return cell
         default:
             return UITableViewCell()
