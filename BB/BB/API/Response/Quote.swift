@@ -5,7 +5,7 @@ struct Quote: Codable  {
     let text: String
     let author: String
     let series: String
-    var isLiked: Bool = false
+    var isLiked: Bool?
     
     enum CodingKeys: String, CodingKey {
         case id = "quote_id"

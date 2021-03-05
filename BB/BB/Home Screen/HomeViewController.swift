@@ -35,7 +35,7 @@ class HomeViewController: MainViewController {
     
     @IBAction private func quotesButtonTapped(_ sender: UIButton) {
         print("🟢 quotesButtonDidTap")
-        proceedToQuotesScene()
+        fetchQuotesToModel()
     }
     
     @IBAction private func logoutButtonTapped(_ sender: UIButton) {
@@ -61,6 +61,18 @@ class HomeViewController: MainViewController {
             case .success(let characters):
                 self.characterModel.characters = characters
                 self.proceedToCharactersScene()
+            case .failure(let error):
+                print("🔴 \(error)")
+            }
+        }
+    }
+    
+    private func fetchQuotesToModel() {
+        apiManager.getQuotes { result in
+            switch result {
+            case .success(let quotes):
+                print("All Quotes: \(quotes)")
+                self.proceedToQuotesScene()
             case .failure(let error):
                 print("🔴 \(error)")
             }
