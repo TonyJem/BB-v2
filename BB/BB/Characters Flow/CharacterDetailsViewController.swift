@@ -5,7 +5,7 @@ class CharacterDetailsViewController: UIViewController {
     @IBOutlet weak private var characterDetailsContainerView: CharacterDetailsView!
     
     var character: Character?
-    private var modelQuotes = Core.Quotes
+    private var quoteModel = Core.quoteModel
     private var characterQuotes: [Quote]?
     
     
@@ -17,9 +17,9 @@ class CharacterDetailsViewController: UIViewController {
         characterDetailsContainerView.nameLabelText = character.name
         characterDetailsContainerView.birthdayLabelText = character.birthday
         
-        print("🟢 all Quotes: \(modelQuotes.quotes)")
+        print("🟢 all Quotes: \(quoteModel.quotes)")
         
-        characterQuotes = modelQuotes.getQuotes(for: character)
+        characterQuotes = quoteModel.getQuotes(for: character)
         print("🟢🟢🟢 \(String(describing: characterQuotes))")
     }
     

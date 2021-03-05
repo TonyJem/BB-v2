@@ -9,10 +9,10 @@ class HomeViewController: MainViewController {
     @IBOutlet private weak var quotesButton: UIButton!
     @IBOutlet private weak var logoutButton: UIButton!
     
-    private let apiManager = Core.ApiManager
-    private let seasonModel = Core.Seasons
-    private let characterModel = Core.Characters
-    private let quotesModel = Core.Quotes
+    private let apiManager = Core.apiManager
+    private let seasonModel = Core.seasonModel
+    private let characterModel = Core.characterModel
+    private let quotesModel = Core.quoteModel
 
     override func viewDidLoad() {
         super.viewDidLoad()

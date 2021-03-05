@@ -4,7 +4,7 @@ class CharactersViewController: UIViewController {
     
     @IBOutlet weak private var charactersTableView: UITableView!
     
-    private let model = Core.Characters
+    private let characterModel = Core.characterModel
     
     private var selectedIndex = IndexPath()
     
@@ -25,12 +25,12 @@ class CharactersViewController: UIViewController {
 extension CharactersViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.characters.count
+        return characterModel.characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = model.characters[indexPath.row].name
+        cell.textLabel?.text = characterModel.characters[indexPath.row].name
         return cell
     }
     
@@ -47,7 +47,7 @@ extension CharactersViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showCharacterFromCharacters") {
             let destinationVC = segue.destination as! CharacterDetailsViewController
-            destinationVC.character = model.characters[selectedIndex.row]
+            destinationVC.character = characterModel.characters[selectedIndex.row]
         }
     }
     
