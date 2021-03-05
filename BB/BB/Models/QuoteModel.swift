@@ -52,6 +52,7 @@ class QuoteModel {
         }
         
         guard let quoteIsLiked = selectedQuote.isLiked else {
+            quotes[row].isLiked = true
             selectedQuote.isLiked = true
             likedQuotes.append(selectedQuote)
             printCurrentResults(for: selectedQuote)
@@ -60,9 +61,11 @@ class QuoteModel {
         
         if quoteIsLiked {
             selectedQuote.isLiked = false
-            likedQuotes = likedQuotes.filter() {$0.text != selectedQuote.text}
+            quotes[row].isLiked = false
+            likedQuotes = likedQuotes.filter(){$0.text != selectedQuote.text}
         } else {
             selectedQuote.isLiked = true
+            quotes[row].isLiked = true
             likedQuotes.append(selectedQuote)
         }
         

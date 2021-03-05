@@ -78,7 +78,6 @@ extension QuotesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         quoteModel.didSelectQuote(at: indexPath.section, and: indexPath.row)
-        
         tableView.reloadData()
     }
     
