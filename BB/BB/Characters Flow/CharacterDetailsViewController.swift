@@ -5,7 +5,7 @@ class CharacterDetailsViewController: UIViewController {
     @IBOutlet weak private var characterDetailsContainerView: CharacterDetailsView!
     
     var character: Character?
-    private var model = Core.Quotes
+    private var modelQuotes = Core.Quotes
     private var characterQuotes: [Quote]?
     
     
@@ -16,7 +16,10 @@ class CharacterDetailsViewController: UIViewController {
         guard let character = character else { return }
         characterDetailsContainerView.nameLabelText = character.name
         characterDetailsContainerView.birthdayLabelText = character.birthday
-        characterQuotes = model.getQuotes(for: character)
+        
+        print("🟢 all Quotes: \(modelQuotes.quotes)")
+        
+        characterQuotes = modelQuotes.getQuotes(for: character)
         print("🟢🟢🟢 \(String(describing: characterQuotes))")
     }
     
@@ -25,20 +28,21 @@ class CharacterDetailsViewController: UIViewController {
 extension CharacterDetailsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let characterQuotes = characterQuotes else { return 1 }
-//        return 2
-        return characterQuotes.count
+        if let characterQuotes = characterQuotes {
+            return characterQuotes.count
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-//        if let characterQuotes = characterQuotes {
-//            cell.textLabel?.text = characterQuotes[indexPath.row].text
-//        } else {
-//            cell.textLabel?.text = "Character has no quotes yet..."
-//        }
-        cell.textLabel?.text = "🟢 TestCellText"
+        if let characterQuotes = characterQuotes {
+            cell.textLabel?.text = characterQuotes[indexPath.row].text
+        } else {
+            cell.textLabel?.text = "Character has no quotes yet..."
+        }
         return cell
     }
     

@@ -12,7 +12,7 @@ enum APIEndpoint {
         case .characters:
           return makeURL(endpoint: "characters?category=Breaking+Bad")
         case .quotes:
-          return makeURL(endpoint: "quotes/")
+          return makeURL(endpoint: "quotes?series=Breaking+Bad")
         }
     }
 }
