@@ -164,6 +164,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BBO-LZ-DPT"/>
+                    <connections>
+                        <outlet property="characterDetailsContainerView" destination="Ri0-4e-rsy" id="1gy-dL-ZEe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbH-4y-szk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

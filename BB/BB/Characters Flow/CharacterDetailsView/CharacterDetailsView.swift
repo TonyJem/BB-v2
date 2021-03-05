@@ -4,7 +4,7 @@ class CharacterDetailsView: UIView {
     
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var birthdayLabel: UILabel!
-    @IBOutlet weak private var quotesTableView: UITableView!
+    @IBOutlet weak var quotesTableView: UITableView!
     
     private var quotesView: UIView!
     private var xibName: String = "CharacterDetailsView"
