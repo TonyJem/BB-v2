@@ -2,24 +2,14 @@ import UIKit
 
 class quoteCell: UITableViewCell {
     
-    @IBOutlet weak private var iconButton: UIButton!
     @IBOutlet weak private var quoteTextLabel: UILabel!
-    
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    @IBAction func iconButtonTapped(_ sender: UIButton) {
-    }
+    @IBOutlet weak private var iconImageView: UIImageView!
     
     func fillContent(with quote: Quote) {
         quoteTextLabel.text = quote.text
-//        if quote.isLiked {
-//            iconButton.setImage(UIImage(named: "heartIcon"), for: .normal)
-//        } else {
-//            iconButton.setImage(UIImage(named: "unselectedHeard"), for: .normal)
-//        }
+        guard let isQuoteLiked = quote.isLiked else { return }
+        
+        iconImageView.image = isQuoteLiked ? UIImage(named: "heartIcon") : UIImage(named: "unselectedHeart")
     }
     
 }

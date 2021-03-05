@@ -1,21 +1,21 @@
 import UIKit
 
 class QuotesViewController: UIViewController {
-
+    
     @IBOutlet weak private var quotesTableview: UITableView!
     
     private let quoteModel = Core.quoteModel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         quotesTableview.register(UINib(nibName: String(describing: quoteCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: quoteCell.self))
         
         quotesTableview.dataSource = self
+        quotesTableview.delegate = self
         quotesTableview.tableFooterView = UIView()
-
     }
-
+    
 }
 
 extension QuotesViewController: UITableViewDataSource {
@@ -48,14 +48,10 @@ extension QuotesViewController: UITableViewDataSource {
         default:
             return 0
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
         guard let cell = quotesTableview.dequeueReusableCell(withIdentifier: String(describing: quoteCell.self), for: indexPath) as? quoteCell else { return UITableViewCell() }
-        
         switch indexPath.section {
         case 0:
             cell.fillContent(with: quoteModel.top3Quotes[indexPath.row])
@@ -73,6 +69,17 @@ extension QuotesViewController: UITableViewDataSource {
         default:
             return UITableViewCell()
         }
+    }
+    
+}
+
+extension QuotesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        quoteModel.didSelectQuote(at: indexPath.section, and: indexPath.row)
+        
+        tableView.reloadData()
     }
     
 }

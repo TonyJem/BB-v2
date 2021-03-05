@@ -1,6 +1,6 @@
 import Foundation
 
-struct Quote: Codable  {
+struct Quote: Codable, Equatable  {
     let id: Int
     let text: String
     let author: String
