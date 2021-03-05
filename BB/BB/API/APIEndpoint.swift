@@ -8,11 +8,11 @@ enum APIEndpoint {
     var url: URL? {
         switch self {
         case .episodes:
-            return makeURL(endpoint: "episodes?series=Breaking+Bad")
+          return makeURL(endpoint: "episodes?series=Breaking+Bad")
         case .characters:
-            return makeURL(endpoint: "characters?series=Breaking+Bad")
+          return makeURL(endpoint: "characters?category=Breaking+Bad")
         case .quotes:
-            return makeURL(endpoint: "quotes/")
+          return makeURL(endpoint: "quotes/")
         }
     }
 }
