@@ -18,7 +18,7 @@ class QuoteModel {
                                     Quote(id: 9, text: "TestYourQuote6", author: "Author6", series: "BB", isLiked: true) ]
     var likedQuotes = [Quote]()
     
-    var selectedQuote = Quote(id: 0, text: "emptyText", author: "", series: "", isLiked: nil)
+    var tableQuotes = [[Quote]]()
     
     var randomQuoteTest = Quote(id: 10, text: "RandomeQuoteTest", author: "Author1", series: "BB", isLiked: true)
     
@@ -42,34 +42,37 @@ class QuoteModel {
         
         switch section {
         case 0:
-            selectedQuote = top3Quotes[row]
+            print("🔴 Do not select Top2 Yet!")
+            
         case 1:
-            selectedQuote = quotes[row]
+            guard let quoteIsLiked = quotes[row].isLiked else {
+                quotes[row].isLiked = true
+                likedQuotes.append(quotes[row])
+                printCurrentResults(for: quotes[row])
+                return
+            }
+            
+            if quoteIsLiked {
+                quotes[row].isLiked = false
+                likedQuotes = likedQuotes.filter(){$0.text != quotes[row].text}
+            } else {
+                quotes[row].isLiked = true
+                likedQuotes.append(quotes[row])
+            }
+            printCurrentResults(for: quotes[row])
+            
         case 2:
-            selectedQuote = randomQuote!
+            // TODO:
+            print("🔴 Do not select Random Yet!")
+            
+            
+            
         default:
-            selectedQuote = Quote(id: 0, text: "emptyText", author: "", series: "", isLiked: nil)
+            // TODO:
+            print("🔴 Default is selected for some reason!")
         }
         
-        guard let quoteIsLiked = selectedQuote.isLiked else {
-            quotes[row].isLiked = true
-            selectedQuote.isLiked = true
-            likedQuotes.append(selectedQuote)
-            printCurrentResults(for: selectedQuote)
-            return
-        }
         
-        if quoteIsLiked {
-            selectedQuote.isLiked = false
-            quotes[row].isLiked = false
-            likedQuotes = likedQuotes.filter(){$0.text != selectedQuote.text}
-        } else {
-            selectedQuote.isLiked = true
-            quotes[row].isLiked = true
-            likedQuotes.append(selectedQuote)
-        }
-        
-        printCurrentResults(for: selectedQuote)
     }
     
     private func printCurrentResults(for selectedQuote: Quote) {
