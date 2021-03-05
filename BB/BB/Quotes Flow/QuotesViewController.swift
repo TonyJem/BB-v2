@@ -67,7 +67,11 @@ extension QuotesViewController: UITableViewDataSource {
             return cell
         case 2:
 //            cell.fillContent(with: model.randomQuote)
-            cell.textLabel?.text = model.randomQuote.text
+            if let randomQuote = model.randomQuote {
+                cell.textLabel?.text = randomQuote.text
+            } else {
+                cell.textLabel?.text = "No quotes to show!"
+            }
             return cell
         default:
             return UITableViewCell()

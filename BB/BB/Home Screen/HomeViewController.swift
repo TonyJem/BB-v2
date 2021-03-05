@@ -74,6 +74,7 @@ class HomeViewController: MainViewController {
             case .success(let quotes):
                 print("🟢 All Quotes did fetch Ok!")
                 self.quotesModel.allQuotes = quotes
+                self.quotesModel.generateRandomQuote()
                 self.proceedToQuotesScene()
             case .failure(let error):
                 print("🔴 \(error)")
