@@ -9,7 +9,7 @@ class QuotesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        quotesTableview.register(UINib(nibName: String(describing: quoteCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: quoteCell.self))
+        quotesTableview.register(UINib(nibName: String(describing: quoteCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: quoteCell.self))
         
         quotesTableview.dataSource = self
         quotesTableview.tableFooterView = UIView()
@@ -52,23 +52,23 @@ extension QuotesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = quotesTableview.dequeueReusableCell(withIdentifier: String(describing: quoteCell.self), for: indexPath) as? quoteCell else { return UITableViewCell() }
         
-        let cell = UITableViewCell()
+        
+        guard let cell = quotesTableview.dequeueReusableCell(withIdentifier: String(describing: quoteCell.self), for: indexPath) as? quoteCell else { return UITableViewCell() }
         
         switch indexPath.section {
         case 0:
-//            cell.fillContent(with: quoteModel.top3Quotes[indexPath.row])
-            cell.textLabel?.text = quoteModel.top3Quotes[indexPath.row].text
+            cell.fillContent(with: quoteModel.top3Quotes[indexPath.row])
+//            cell.textLabel?.text = quoteModel.top3Quotes[indexPath.row].text
             return cell
         case 1:
-//            cell.fillContent(with: quoteModel.yourQuotesTest[indexPath.row])
-            cell.textLabel?.text = quoteModel.quotes[indexPath.row].text
+            cell.fillContent(with: quoteModel.yourQuotesTest[indexPath.row])
+//            cell.textLabel?.text = quoteModel.quotes[indexPath.row].text
             return cell
         case 2:
-//            cell.fillContent(with: quoteModel.randomQuote)
             if let randomQuote = quoteModel.randomQuote {
-                cell.textLabel?.text = randomQuote.text
+                cell.fillContent(with: randomQuote)
+//                cell.textLabel?.text = randomQuote.text
             } else {
                 cell.textLabel?.text = "No quotes to show!"
             }
