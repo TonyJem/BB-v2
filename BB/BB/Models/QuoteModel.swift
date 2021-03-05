@@ -34,4 +34,11 @@ class QuoteModel {
         randomQuote = randomlyGeneratedQuote
     }
     
+    func getQuotes(for character: Character) -> [Quote] {
+        let filteredQuotes = allQuotes.filter { quote in
+            return quote.author == character.name
+        }
+        return filteredQuotes
+    }
+    
 }
