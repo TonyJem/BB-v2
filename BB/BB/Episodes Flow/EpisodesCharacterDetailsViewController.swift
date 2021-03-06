@@ -6,15 +6,17 @@ class EpisodesCharacterDetailsViewController: UIViewController {
     
     var characterName: String?
     
-    private var character: Character?
     private var chracterModel = Core.characterModel
     private var quoteModel = Core.quoteModel
+    private var character: Character?
     private var characterQuotes: [Quote]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         characterDetailsContainerView.quotesTableView.dataSource = self
+        characterDetailsContainerView.quotesTableView.delegate = self
         characterDetailsContainerView.quotesTableView.tableFooterView = UIView()
+        characterDetailsContainerView.quotesTableView.register(UINib(nibName: String(describing: quoteCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: quoteCell.self))
         
         guard let characterName = characterName else { return }
         
@@ -22,10 +24,8 @@ class EpisodesCharacterDetailsViewController: UIViewController {
         characterDetailsContainerView.nameLabelText = character.name
         characterDetailsContainerView.birthdayLabelText = character.birthday
         
-        print("🟢 all Quotes: \(quoteModel.quotes)")
-        
         characterQuotes = quoteModel.getQuotes(for: character)
-        print("🟢🟢🟢 \(String(describing: characterQuotes))")
+        
     }
     
 }
@@ -41,14 +41,27 @@ extension EpisodesCharacterDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        guard let cell = characterDetailsContainerView.quotesTableView.dequeueReusableCell(withIdentifier: String(describing: quoteCell.self), for: indexPath) as? quoteCell else { return UITableViewCell() }
         
         if let characterQuotes = characterQuotes {
-            cell.textLabel?.text = characterQuotes[indexPath.row].text
-        } else {
-            cell.textLabel?.text = "Character has no quotes yet..."
+            cell.fillContent(with: characterQuotes[indexPath.row])
         }
         return cell
+    }
+    
+}
+
+extension EpisodesCharacterDetailsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let characterQuotes = characterQuotes {
+            quoteModel.didSelect(quote: characterQuotes[indexPath.row])
+        }
+        
+        tableView.reloadData()
     }
     
 }
