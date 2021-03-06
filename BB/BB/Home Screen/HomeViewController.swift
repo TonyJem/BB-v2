@@ -36,7 +36,16 @@ class HomeViewController: MainViewController {
     
     @IBAction private func quotesButtonTapped(_ sender: UIButton) {
         print("🟢 quotesButtonDidTap")
-        fetchQuotesToModel()
+        
+        if quotesModel.quotes.isEmpty {
+            print("🟣 Start fething quotes from API")
+            fetchQuotesToModel()
+        } else {
+            print("🟡 Skip fething quotes from API and laod quotes from model")
+            quotesModel.generateRandomQuote()
+            proceedToQuotesScene()
+        }
+        
     }
     
     @IBAction private func logoutButtonTapped(_ sender: UIButton) {
