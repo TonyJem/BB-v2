@@ -39,12 +39,11 @@ extension CharacterDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        
+        guard let cell = characterDetailsContainerView.quotesTableView.dequeueReusableCell(withIdentifier: String(describing: quoteCell.self), for: indexPath) as? quoteCell else { return UITableViewCell() }
         
         if let characterQuotes = characterQuotes {
-            cell.textLabel?.text = characterQuotes[indexPath.row].text
-        } else {
-            cell.textLabel?.text = "Character has no quotes yet..."
+            cell.fillContent(with: characterQuotes[indexPath.row])
         }
         return cell
     }
