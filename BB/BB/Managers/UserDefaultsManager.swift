@@ -27,6 +27,18 @@ struct UserDefaultsManager {
         accounts = savedAccounts
     }
     
+    static func save(favoriteQuotes: [Quote], to account: Account) {
+        var savedAccounts = [Account]()
+        if let accounts = accounts {
+            savedAccounts = accounts
+            
+            if let index = accounts.firstIndex(where: { $0.username == account.username }) {
+                savedAccounts[index].favouriteQuotes = favoriteQuotes
+            }
+        }
+        accounts = savedAccounts
+    }
+    
 }
 
 // MARK: - Helpers

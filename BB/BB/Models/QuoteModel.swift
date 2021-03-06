@@ -12,11 +12,15 @@ class QuoteModel {
     
     var likedQuotes: [Quote] {
         get {
-            guard let favouriteQuotes = AccountManager.loggedInAccount?.favouriteQuotes else { return [] }
+//            guard let favouriteQuotes = AccountManager.loggedInAccount?.favouriteQuotes else { return [] }
+//            return favouriteQuotes
+            
+            guard let favouriteQuotes = UserDefaultsManager.currentAccount?.favouriteQuotes else { return [] }
             return favouriteQuotes
         }
         set(likedQuotes) {
-            AccountManager.loggedInAccount?.favouriteQuotes = likedQuotes
+//            AccountManager.loggedInAccount?.favouriteQuotes = likedQuotes
+            UserDefaultsManager.currentAccount?.favouriteQuotes = likedQuotes
         }
     }
     

@@ -63,6 +63,10 @@ class HomeViewController: MainViewController {
     }
     
     @IBAction private func logoutButtonTapped(_ sender: UIButton) {
+        
+        if let currentAccount = UserDefaultsManager.currentAccount {
+            UserDefaultsManager.save(favoriteQuotes: quotesModel.likedQuotes, to: currentAccount)
+        }
         AccountManager.loggedInAccount = nil
         dismiss(animated: true)
     }
