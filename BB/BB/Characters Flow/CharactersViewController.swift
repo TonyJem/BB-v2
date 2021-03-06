@@ -5,6 +5,8 @@ class CharactersViewController: UIViewController {
     @IBOutlet weak private var charactersTableView: UITableView!
     
     private let characterModel = Core.characterModel
+    private let quotesModel = Core.quoteModel
+    private let apiManager = Core.apiManager
     
     private var selectedIndex = IndexPath()
     
@@ -41,13 +43,30 @@ extension CharactersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         selectedIndex = indexPath
-        performSegue(withIdentifier: "showCharacterFromCharacters", sender: nil)
+        self.quotesModel.quotes.isEmpty ? fetchQuotesAndPerformSegue() : performSegue()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showCharacterFromCharacters") {
             let destinationVC = segue.destination as! CharacterDetailsViewController
             destinationVC.character = characterModel.characters[selectedIndex.row]
+        }
+    }
+    
+    private func performSegue() {
+        performSegue(withIdentifier: "showCharacterFromCharacters", sender: nil)
+    }
+    
+    private func fetchQuotesAndPerformSegue() {
+        apiManager.getQuotes { result in
+            switch result {
+            case .success(let quotes):
+                print("🟢 All Quotes did fetch Ok!")
+                self.quotesModel.quotes = quotes
+                self.performSegue()
+            case .failure(let error):
+                print("🔴 \(error)")
+            }
         }
     }
     

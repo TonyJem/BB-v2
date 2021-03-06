@@ -31,7 +31,14 @@ class HomeViewController: MainViewController {
     
     @IBAction private func charactersButtonTapped(_ sender: UIButton) {
         print("🟢 charactersButtonDidTap")
-        fetchCharactersToModel()
+        
+        if characterModel.characters.isEmpty {
+            fetchCharactersToModel()
+        } else {
+            print("🟡 Skip fething Characters from API and load quotes from model")
+            proceedToCharactersScene()
+        }
+
     }
     
     @IBAction private func quotesButtonTapped(_ sender: UIButton) {
