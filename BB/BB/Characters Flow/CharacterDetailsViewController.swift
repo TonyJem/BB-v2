@@ -11,8 +11,12 @@ class CharacterDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        characterDetailsContainerView.quotesTableView.dataSource = self
-        characterDetailsContainerView.quotesTableView.tableFooterView = UIView()
+        
+        guard let tableView = characterDetailsContainerView.quotesTableView else { return }
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
+        tableView.register(UINib(nibName: String(describing: quoteCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: quoteCell.self))
         
         guard let character = character else { return }
         characterDetailsContainerView.nameLabelText = character.name
@@ -32,16 +36,22 @@ extension CharacterDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: quoteCell.self), for: indexPath) as? quoteCell else { return UITableViewCell() }
         
         guard let characterQuotes = characterQuotes else { return cell }
         
         if let quote = characterQuotes[quotesIDs[indexPath.row]] {
-            cell.textLabel?.text = quote.text
+            cell.fillContent(with: quote)
         } else {
+//            TODO: Need to put some solution in case empty cell
             cell.textLabel?.text = ""
         }
         return cell
     }
 
+}
+
+extension CharacterDetailsViewController: UITableViewDelegate {
+    
 }
