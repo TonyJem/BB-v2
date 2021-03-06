@@ -11,6 +11,9 @@ class EpisodeDetailsViewController: UIViewController {
     
     var episode: Episode?
     
+    private let apiManager = Core.apiManager
+    private let quoteModel = Core.quoteModel
+    
     private var selectedIndex = IndexPath()
     
     override func viewDidLoad() {
@@ -68,7 +71,7 @@ extension EpisodeDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         selectedIndex = indexPath
-        performSegue(withIdentifier: "showCharacterDetailView", sender: nil)
+        self.quoteModel.quotes.isEmpty ? fetchQuotesAndPerformSegue() : performSegue()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -77,6 +80,23 @@ extension EpisodeDetailsViewController: UITableViewDelegate {
             guard let episode = episode  else { return }
             let character = episode.characters[selectedIndex.row]
             destinationVC.characterName = character
+        }
+    }
+    
+    private func performSegue() {
+        performSegue(withIdentifier: "showCharacterDetailView", sender: nil)
+    }
+    
+    private func fetchQuotesAndPerformSegue() {
+        apiManager.getQuotes { result in
+            switch result {
+            case .success(let quotes):
+                print("🟢 All Quotes did fetch Ok!")
+                self.quoteModel.quotes = quotes
+                self.performSegue()
+            case .failure(let error):
+                print("🔴 \(error)")
+            }
         }
     }
     

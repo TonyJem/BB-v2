@@ -5,6 +5,8 @@ class EpisodesViewController: MainViewController {
     @IBOutlet private var seasonsTableView: UITableView!
     
     private let seasonModel = Core.seasonModel
+    private let apiManager = Core.apiManager
+    private let characterModel = Core.characterModel
     
     private var selectedIndex = IndexPath()
     
@@ -59,7 +61,7 @@ extension EpisodesViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         selectedIndex = indexPath
-        performSegue(withIdentifier: "showEpisodeDetailView", sender: nil)
+        self.characterModel.characters.isEmpty ? fetchCharactersAndPerformSegue() : performSegue()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -73,5 +75,21 @@ extension EpisodesViewController: UITableViewDelegate {
                 destinationVC.episode = episode
             }
         }
+    
+    private func performSegue() {
+        performSegue(withIdentifier: "showEpisodeDetailView", sender: nil)
+    }
+    
+    private func fetchCharactersAndPerformSegue() {
+        apiManager.getCharacters { result in
+            switch result {
+            case .success(let characters):
+                self.characterModel.characters = characters
+                self.performSegue()
+            case .failure(let error):
+                print("🔴 \(error)")
+            }
+        }
+    }
     
 }
