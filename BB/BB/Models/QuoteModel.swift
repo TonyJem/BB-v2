@@ -34,6 +34,7 @@ class QuoteModel {
         return filteredQuotes
     }
     
+//    TODO: Change this method with didSelect(quote: Quote)
     func didSelectQuote(at section: Int, and row: Int) {
         print("🟢 cell did selected at section: \(section) and \(row)")
         
@@ -61,6 +62,11 @@ class QuoteModel {
     
     func didSelect(quote: Quote) {
         print("🟢 DidSelect quote: \(quote.text)")
+        if likedQuotes.contains(quote) {
+            likedQuotes = likedQuotes.filter(){$0.text != quote.text}
+        } else {
+            likedQuotes.append(quote)
+        }
     }
     
 }
