@@ -26,7 +26,14 @@ class HomeViewController: MainViewController {
     
     @IBAction private func episodesButtonTapped(_ sender: UIButton) {
         print("🟢 episodesButtonDidTap")
-        fetchEpisodesToModel()
+        
+        if seasonModel.episodes.isEmpty {
+            fetchEpisodesToModel()
+        } else {
+            print("🟡 Skip fething Episodes from API and load them from model")
+            proceedToEpisodesScene()
+        }
+        
     }
     
     @IBAction private func charactersButtonTapped(_ sender: UIButton) {
@@ -35,7 +42,7 @@ class HomeViewController: MainViewController {
         if characterModel.characters.isEmpty {
             fetchCharactersToModel()
         } else {
-            print("🟡 Skip fething Characters from API and load quotes from model")
+            print("🟡 Skip fething Characters from API and load them from model")
             proceedToCharactersScene()
         }
 
@@ -45,10 +52,10 @@ class HomeViewController: MainViewController {
         print("🟢 quotesButtonDidTap")
         
         if quotesModel.quotes.isEmpty {
-            print("🟣 Start fething quotes from API")
+            print("🟣 Start fething Quotes from API")
             fetchQuotesToModel()
         } else {
-            print("🟡 Skip fething quotes from API and laod quotes from model")
+            print("🟡 Skip fething Quotes from API and laod quotes from model")
             quotesModel.generateRandomQuote()
             proceedToQuotesScene()
         }
