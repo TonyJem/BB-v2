@@ -97,6 +97,19 @@ class QuoteModel {
     
     func didSelectQuote(with quoteId: Int) {
         print("🟢 Selected quoteId is: \(quoteId)")
+        
+        if let index = quotes.firstIndex(where: { $0.id == quoteId }) {
+            
+            print("🟢 Selected from array text is: \(quotes[index].text)")
+            print("🟢🟢 Like status before set: \(String(describing: quotes[index].isLiked))")
+            
+            quotes[index].isLiked = true
+            print("🟢🟢🟢 Like status After set: \(String(describing: quotes[index].isLiked))")
+            
+            likedQuotes.append(quotes[index])
+            
+        }
+        
     }
     
 }

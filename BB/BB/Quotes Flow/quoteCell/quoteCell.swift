@@ -8,12 +8,23 @@ class quoteCell: UITableViewCell {
     func fillContent(with quote: Quote) {
         quoteTextLabel.text = quote.text
         
-//        TODO: Refactor that palce to keep unwrap and false in same guard
-        guard let isQuoteLiked = quote.isLiked else {
+        ////        TODO: Refactor that palce to keep unwrap and false in same guard
+        //        guard let isQuoteLiked = quote.isLiked else {
+        //            iconImageView.image = UIImage(named: "unselectedHeart")
+        //            return
+        //        }
+        //        iconImageView.image = isQuoteLiked ? UIImage(named: "heartIcon") : UIImage(named: "unselectedHeart")
+        //    }
+        
+        let likedQuotes = Core.quoteModel.likedQuotes
+        let isInLikedQuotes = likedQuotes.contains(quote)
+        
+        if isInLikedQuotes {
+            iconImageView.image = UIImage(named: "heartIcon")
+        } else {
             iconImageView.image = UIImage(named: "unselectedHeart")
-            return
         }
-        iconImageView.image = isQuoteLiked ? UIImage(named: "heartIcon") : UIImage(named: "unselectedHeart")
+        
     }
     
 }
