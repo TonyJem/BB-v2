@@ -42,7 +42,7 @@ extension QuotesViewController: UITableViewDataSource {
         case 0:
             return quoteModel.top3Quotes.count
         case 1:
-            return quoteModel.likedQuotes.count
+            return quoteModel.favoriteQuotes.count
         case 2:
             return 1
         default:
@@ -57,7 +57,7 @@ extension QuotesViewController: UITableViewDataSource {
             cell.fillContent(with: quoteModel.top3Quotes[indexPath.row])
             return cell
         case 1:
-            cell.fillContent(with: quoteModel.likedQuotes[indexPath.row])
+            cell.fillContent(with: quoteModel.favoriteQuotes[indexPath.row])
             return cell
         case 2:
             cell.fillContent(with: quoteModel.randomQuote)
@@ -78,7 +78,7 @@ extension QuotesViewController: UITableViewDelegate {
         case 0:
             quoteModel.didSelect(quote: quoteModel.top3Quotes[indexPath.row])
         case 1:
-            quoteModel.didSelect(quote: quoteModel.likedQuotes[indexPath.row])
+            quoteModel.didSelect(quote: quoteModel.favoriteQuotes[indexPath.row])
         case 2:
             quoteModel.didSelect(quote: quoteModel.randomQuote)
         default:

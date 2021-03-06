@@ -8,7 +8,7 @@ class quoteCell: UITableViewCell {
     func fillContent(with quote: Quote) {
         quoteTextLabel.text = quote.text
         
-        if Core.quoteModel.likedQuotes.contains(quote) {
+        if Core.quoteModel.favoriteQuotes.contains(quote) {
             iconImageView.image = UIImage(named: "heartIcon")
         } else {
             iconImageView.image = UIImage(named: "unselectedHeart")

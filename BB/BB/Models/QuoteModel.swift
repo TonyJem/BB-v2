@@ -10,17 +10,13 @@ class QuoteModel {
                                 Quote(id: 2, text: "TopYourQuote2", author: "Author1", series: "BB"),
                                 Quote(id: 3, text: "TopYourQuote3", author: "Author1", series: "BB") ]
     
-    var likedQuotes: [Quote] {
+    var favoriteQuotes: [Quote] {
         get {
-//            guard let favouriteQuotes = AccountManager.loggedInAccount?.favouriteQuotes else { return [] }
-//            return favouriteQuotes
-            
             guard let favouriteQuotes = UserDefaultsManager.currentAccount?.favouriteQuotes else { return [] }
             return favouriteQuotes
         }
-        set(likedQuotes) {
-//            AccountManager.loggedInAccount?.favouriteQuotes = likedQuotes
-            UserDefaultsManager.currentAccount?.favouriteQuotes = likedQuotes
+        set(favouriteQuotes) {
+            UserDefaultsManager.currentAccount?.favouriteQuotes = favouriteQuotes
         }
     }
     
@@ -37,10 +33,10 @@ class QuoteModel {
     }
     
     func didSelect(quote: Quote) {
-        if likedQuotes.contains(quote) {
-            likedQuotes = likedQuotes.filter(){$0.text != quote.text}
+        if favoriteQuotes.contains(quote) {
+            favoriteQuotes = favoriteQuotes.filter(){$0.text != quote.text}
         } else {
-            likedQuotes.append(quote)
+            favoriteQuotes.append(quote)
         }
     }
     
