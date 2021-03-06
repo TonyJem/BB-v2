@@ -20,8 +20,6 @@ class QuoteModel {
         }
     }
     
-    var tableQuotes = [[Quote]]()
-    
     func generateRandomQuote() {
         guard let randomlyGeneratedQuote = quotes.randomElement() else { return }
         randomQuote = randomlyGeneratedQuote
