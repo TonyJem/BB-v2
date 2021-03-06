@@ -34,34 +34,7 @@ class QuoteModel {
         return filteredQuotes
     }
     
-//    TODO: Change this method with didSelect(quote: Quote)
-    func didSelectQuote(at section: Int, and row: Int) {
-        print("🟢 cell did selected at section: \(section) and \(row)")
-        
-        switch section {
-        case 0:
-            print("🔴 Do not select Top2 Yet!")
-            
-        case 1:
-            likedQuotes = likedQuotes.filter(){$0.text != likedQuotes[row].text}
-            
-        case 2:
-//            TODO: Refactor via contains
-            if likedQuotes.filter({ $0.text == randomQuote.text }).isEmpty {
-                likedQuotes.append(randomQuote)
-            } else {
-                likedQuotes = likedQuotes.filter(){$0.text != randomQuote.text}
-            }
-            
-        default:
-            // TODO:
-            print("🔴 Default is selected for some reason!")
-        }
-        
-    }
-    
     func didSelect(quote: Quote) {
-        print("🟢 DidSelect quote: \(quote.text)")
         if likedQuotes.contains(quote) {
             likedQuotes = likedQuotes.filter(){$0.text != quote.text}
         } else {

@@ -73,7 +73,19 @@ extension QuotesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        quoteModel.didSelectQuote(at: indexPath.section, and: indexPath.row)
+        
+        switch indexPath.section {
+        case 0:
+            quoteModel.didSelect(quote: quoteModel.top3Quotes[indexPath.row])
+        case 1:
+            quoteModel.didSelect(quote: quoteModel.likedQuotes[indexPath.row])
+        case 2:
+            quoteModel.didSelect(quote: quoteModel.randomQuote)
+        default:
+//            TODO: Add enum so do not need default in switch
+            print("Unexpected default section")
+        }
+        
         tableView.reloadData()
     }
     
