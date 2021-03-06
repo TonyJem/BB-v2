@@ -1,7 +1,7 @@
 import UIKit
 
 class CharacterDetailsViewController: UIViewController {
-    
+//    TODO: Move same functionality from CharacterDetailsViewController and  EpisodesCharacterDetailsViewController to same parent class and inherit from here
     @IBOutlet weak private var characterDetailsContainerView: CharacterDetailsView!
     
     var character: Character?
