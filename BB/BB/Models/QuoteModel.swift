@@ -95,4 +95,8 @@ class QuoteModel {
         
     }
     
+    func didSelectQuote(with quoteId: Int) {
+        print("🟢 Selected quoteId is: \(quoteId)")
+    }
+    
 }

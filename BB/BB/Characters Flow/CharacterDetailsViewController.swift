@@ -54,4 +54,12 @@ extension CharacterDetailsViewController: UITableViewDataSource {
 
 extension CharacterDetailsViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let quoteId = quotesIDs[indexPath.row]
+        quoteModel.didSelectQuote(with: quoteId)
+        tableView.reloadData()
+    }
+    
 }
