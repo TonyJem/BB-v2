@@ -4,6 +4,10 @@ class QuoteModel {
     
     var quotes = [Quote]()
     
+    var quotesById: [Int: Quote] {
+        quotes.toDictionary { $0.id }
+    }
+    
     var randomQuote = Quote(id: 0, text: "No Random Quote", author: "", series: "", isLiked: false)
     
     var top3Quotes: [Quote] = [ Quote(id: 1, text: "TopQuote1", author: "Author1", series: "BB", isLiked: true),
@@ -30,6 +34,12 @@ class QuoteModel {
     func getQuotes(for character: Character) -> [Quote] {
         let filteredQuotes = quotes.filter { quote in
             return quote.author == character.name
+        }
+        return filteredQuotes
+    }
+    
+    func getQuotesFromDict(for character: Character) -> [Int: Quote] {
+        let filteredQuotes = quotesById.filter { $0.value.author == character.name
         }
         return filteredQuotes
     }
@@ -62,6 +72,9 @@ class QuoteModel {
             
         case 2:
             guard let quoteIsLiked = randomQuote.isLiked else {
+// TODO: remove when not needed
+  print(quotesById[randomQuote.id]?.text as Any)
+                
                 randomQuote.isLiked = true
                 likedQuotes.append(randomQuote)
                 return

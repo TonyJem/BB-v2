@@ -6,8 +6,8 @@ class CharacterDetailsViewController: UIViewController {
     
     var character: Character?
     private var quoteModel = Core.quoteModel
-    private var characterQuotes: [Quote]?
-    
+    private var characterQuotesDict: [Int: Quote]?
+    private var quotesIDs: [Int]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,11 @@ class CharacterDetailsViewController: UIViewController {
         
         print("🟢 all Quotes: \(quoteModel.quotes)")
         
-        characterQuotes = quoteModel.getQuotes(for: character)
-        print("🟢🟢🟢 \(String(describing: characterQuotes))")
+        characterQuotesDict = quoteModel.getQuotesFromDict(for: character)
+        
+        guard let characterQuotesDict = characterQuotesDict else { return }
+        quotesIDs = Array(characterQuotesDict.keys).sorted {$0 < $1}
+
     }
     
 }
@@ -29,8 +32,8 @@ class CharacterDetailsViewController: UIViewController {
 extension CharacterDetailsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let characterQuotes = characterQuotes {
-            return characterQuotes.count
+        if let quotesIDs = quotesIDs {
+            return quotesIDs.count
         } else {
             return 1
         }
@@ -39,12 +42,29 @@ extension CharacterDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-        if let characterQuotes = characterQuotes {
-            cell.textLabel?.text = characterQuotes[indexPath.row].text
+//        guard let characterQuotesDict = characterQuotesDict,
+//              let quotesIDs = quotesIDs else {
+//            cell.textLabel?.text = "Character has no quotes yet..."
+//            return cell
+//        }
+        
+//        cell.textLabel?.text = characterQuotesDict[quotesIDs[indexPath.row].value]
+        
+        
+        guard let quotesIDs = quotesIDs else { return cell }
+        
+        if let quote = characterQuotesDict![quotesIDs[indexPath.row]] {
+            cell.textLabel?.text = quote.text
         } else {
-            cell.textLabel?.text = "Character has no quotes yet..."
+            cell.textLabel?.text = ""
         }
+        
+        
+        
+        
+//        cell.textLabel?.text = "quote text \(indexPath.row) with id:\(quotesIDs[indexPath.row])"
         return cell
+
     }
     
 }
