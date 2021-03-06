@@ -20,6 +20,7 @@ class HomeViewController: MainViewController {
         guard let loggedInAccount = AccountManager.loggedInAccount else { return }
         usernameLabel.text = loggedInAccount.username
 //        TODO: switched off for test reasons
+//        BUG: Button does not know if user added favourites... Might is necessary to add Observer.
 //        quotesButton.isEnabled = !loggedInAccount.favouriteQuotes.isEmpty
         
     }
