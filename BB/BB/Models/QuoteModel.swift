@@ -45,6 +45,7 @@ class QuoteModel {
             likedQuotes = likedQuotes.filter(){$0.text != likedQuotes[row].text}
             
         case 2:
+//            TODO: Refactor via contains
             if likedQuotes.filter({ $0.text == randomQuote.text }).isEmpty {
                 likedQuotes.append(randomQuote)
             } else {
@@ -56,6 +57,10 @@ class QuoteModel {
             print("🔴 Default is selected for some reason!")
         }
         
+    }
+    
+    func didSelect(quote: Quote) {
+        print("🟢 DidSelect quote: \(quote.text)")
     }
     
 }

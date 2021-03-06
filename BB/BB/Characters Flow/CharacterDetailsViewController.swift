@@ -5,6 +5,7 @@ class CharacterDetailsViewController: UIViewController {
     @IBOutlet weak private var characterDetailsContainerView: CharacterDetailsView!
     
     var character: Character?
+    
     private var quoteModel = Core.quoteModel
     private var characterQuotes: [Quote]?
     
@@ -12,16 +13,17 @@ class CharacterDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         characterDetailsContainerView.quotesTableView.dataSource = self
+        characterDetailsContainerView.quotesTableView.delegate = self
         characterDetailsContainerView.quotesTableView.tableFooterView = UIView()
+        characterDetailsContainerView.quotesTableView.register(UINib(nibName: String(describing: quoteCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: quoteCell.self))
+        
         
         guard let character = character else { return }
         characterDetailsContainerView.nameLabelText = character.name
         characterDetailsContainerView.birthdayLabelText = character.birthday
-        
-        print("🟢 all Quotes: \(quoteModel.quotes)")
-        
+
         characterQuotes = quoteModel.getQuotes(for: character)
-        print("🟢🟢🟢 \(String(describing: characterQuotes))")
+        
     }
     
 }
@@ -45,6 +47,21 @@ extension CharacterDetailsViewController: UITableViewDataSource {
             cell.textLabel?.text = "Character has no quotes yet..."
         }
         return cell
+    }
+    
+}
+
+extension CharacterDetailsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let characterQuotes = characterQuotes {
+            quoteModel.didSelect(quote: characterQuotes[indexPath.row])
+        }
+        
+        tableView.reloadData()
     }
     
 }
