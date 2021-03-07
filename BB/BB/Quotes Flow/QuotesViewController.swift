@@ -94,4 +94,20 @@ extension QuotesViewController: UITableViewDelegate {
         tableView.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if indexPath.section == 1 {
+            let editAction = UIContextualAction(style: .normal, title: "Remove from favourites") { [weak self] (action, view, completionHandler) in self?.editCellContent(at: indexPath)
+                completionHandler(true)
+            }
+            editAction.backgroundColor = .orange
+            return UISwipeActionsConfiguration(actions: [editAction])
+        }
+        return nil
+    }
+    
+    private func editCellContent(at indexPath: IndexPath) {
+        quoteModel.didSelect(quote: quoteModel.favoriteQuotes[indexPath.row])
+        quotesTableview.reloadData()
+    }
+    
 }
