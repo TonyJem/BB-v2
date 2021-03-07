@@ -9,6 +9,9 @@ class HomeViewController: MainViewController {
     @IBOutlet private weak var quotesButton: UIButton!
     @IBOutlet private weak var logoutButton: UIButton!
     
+    @IBOutlet weak private var indicatorView: UIView!
+    @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
+    
     private let apiManager = Core.apiManager
     private let seasonModel = Core.seasonModel
     private let characterModel = Core.characterModel
@@ -16,6 +19,7 @@ class HomeViewController: MainViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicatorView.isHidden = true
         
         guard let loggedInAccount = AccountManager.loggedInAccount else { return }
         usernameLabel.text = loggedInAccount.username
@@ -54,6 +58,9 @@ class HomeViewController: MainViewController {
         
         if quotesModel.quotes.isEmpty {
             print("🟣 Start fething Quotes from API")
+            indicatorView.isHidden = false
+            activityIndicator.startAnimating()
+            
             fetchQuotesToModel()
         } else {
             print("🟡 Skip fething Quotes from API and laod quotes from model")
@@ -103,10 +110,14 @@ class HomeViewController: MainViewController {
             switch result {
             case .success(let quotes):
                 print("🟢 All Quotes did fetch Ok!")
+                self.indicatorView.isHidden = true
+                self.activityIndicator.stopAnimating()
                 self.quotesModel.quotes = quotes
                 self.quotesModel.generateRandomQuote()
                 self.proceedToQuotesScene()
             case .failure(let error):
+                self.indicatorView.isHidden = true
+                self.activityIndicator.stopAnimating()
                 print("🔴 \(error)")
             }
         }

@@ -83,7 +83,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZc-u9-aFB">
                                                 <rect key="frame" x="0.0" y="162" width="248" height="56"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.36815492799999999" blue="0.1080056534" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <state key="normal" title="Quotes">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -101,13 +101,39 @@
                                             <constraint firstItem="oZc-u9-aFB" firstAttribute="height" secondItem="DFS-xK-F1H" secondAttribute="height" id="oml-yk-rFe"/>
                                         </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNU-n1-Orc" userLabel="indicatorView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="HrV-Lv-q5p">
+                                                <rect key="frame" x="20" y="120" width="374" height="374"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="HrV-Lv-q5p" secondAttribute="height" id="RHP-pA-NTi"/>
+                                                </constraints>
+                                            </imageView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="85J-EU-bTD">
+                                                <rect key="frame" x="188.5" y="599.5" width="37" height="37"/>
+                                                <color key="color" red="0.93725490199999995" green="0.36815492799999999" blue="0.1080056534" alpha="1" colorSpace="calibratedRGB"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="HrV-Lv-q5p" secondAttribute="trailing" constant="20" id="4y9-jV-hY4"/>
+                                            <constraint firstItem="85J-EU-bTD" firstAttribute="centerX" secondItem="xNU-n1-Orc" secondAttribute="centerX" id="WnV-UA-g99"/>
+                                            <constraint firstItem="HrV-Lv-q5p" firstAttribute="top" secondItem="xNU-n1-Orc" secondAttribute="top" constant="120" id="a5x-QG-IJ0"/>
+                                            <constraint firstItem="HrV-Lv-q5p" firstAttribute="leading" secondItem="xNU-n1-Orc" secondAttribute="leading" constant="20" id="bqf-Zh-LmQ"/>
+                                            <constraint firstItem="85J-EU-bTD" firstAttribute="centerY" secondItem="xNU-n1-Orc" secondAttribute="centerY" constant="170" id="ivc-Yj-xGY"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="NUS-3f-5M4" firstAttribute="centerX" secondItem="J8X-MR-W7O" secondAttribute="centerX" id="44j-fV-3ah"/>
+                                    <constraint firstAttribute="trailing" secondItem="xNU-n1-Orc" secondAttribute="trailing" id="6mL-cv-Ybn"/>
+                                    <constraint firstItem="xNU-n1-Orc" firstAttribute="leading" secondItem="J8X-MR-W7O" secondAttribute="leading" id="70v-ej-yWR"/>
                                     <constraint firstItem="Yfc-YX-Ivv" firstAttribute="leading" secondItem="J8X-MR-W7O" secondAttribute="leading" constant="20" id="Fwb-we-kKr"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l4R-54-2Jr" secondAttribute="trailing" constant="20" id="M4Y-xM-ROq"/>
                                     <constraint firstItem="NUS-3f-5M4" firstAttribute="centerY" secondItem="J8X-MR-W7O" secondAttribute="centerY" id="Qyd-CG-hbu"/>
+                                    <constraint firstItem="xNU-n1-Orc" firstAttribute="top" secondItem="J8X-MR-W7O" secondAttribute="top" id="U9T-50-bGH"/>
                                     <constraint firstItem="NUS-3f-5M4" firstAttribute="width" secondItem="J8X-MR-W7O" secondAttribute="width" multiplier="0.6" id="VcI-JI-HQ5"/>
                                     <constraint firstAttribute="bottom" secondItem="l4R-54-2Jr" secondAttribute="bottom" constant="60" id="cHQ-Ya-zjL"/>
                                     <constraint firstItem="l4R-54-2Jr" firstAttribute="centerX" secondItem="J8X-MR-W7O" secondAttribute="centerX" id="cYt-eW-hlN"/>
@@ -115,6 +141,7 @@
                                     <constraint firstItem="l4R-54-2Jr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="J8X-MR-W7O" secondAttribute="leading" constant="20" id="jyh-4I-VEM"/>
                                     <constraint firstItem="NUS-3f-5M4" firstAttribute="top" secondItem="Yfc-YX-Ivv" secondAttribute="bottom" constant="60" id="kyQ-wP-P27"/>
                                     <constraint firstAttribute="trailing" secondItem="Yfc-YX-Ivv" secondAttribute="trailing" constant="20" id="s9p-pW-Jog"/>
+                                    <constraint firstAttribute="bottom" secondItem="xNU-n1-Orc" secondAttribute="bottom" id="ucL-6m-8Xs"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -128,9 +155,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="85J-EU-bTD" id="SH5-GK-w32"/>
                         <outlet property="appTitleLabel" destination="KfK-mC-9pB" id="93V-Dc-ADQ"/>
                         <outlet property="charactersButton" destination="DFS-xK-F1H" id="v9P-j3-UBh"/>
                         <outlet property="episodesButton" destination="NuX-ex-JsR" id="fNS-QC-H2q"/>
+                        <outlet property="indicatorView" destination="xNU-n1-Orc" id="feu-Je-Oc6"/>
                         <outlet property="logoutButton" destination="l4R-54-2Jr" id="6Zd-aJ-I2x"/>
                         <outlet property="quotesButton" destination="oZc-u9-aFB" id="eoA-3c-rd4"/>
                         <outlet property="usernameLabel" destination="rYG-sA-aUA" id="24v-rX-7S3"/>
@@ -142,6 +171,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="loadingBackground" width="800" height="800"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
