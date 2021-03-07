@@ -43,18 +43,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="888" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCm-xP-Cyb">
-                                <rect key="frame" x="379" y="5" width="20" height="10"/>
+                                <rect key="frame" x="374" y="5" width="25" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="Q7r-LL-spz"/>
+                                    <constraint firstAttribute="height" constant="15" id="Q7r-LL-spz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Teu-PZ-AJO">
-                                <rect key="frame" x="364" y="5" width="10" height="10"/>
+                                <rect key="frame" x="354" y="5" width="15" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="10" id="2L7-Gg-dhn"/>
                                     <constraint firstAttribute="width" secondItem="Teu-PZ-AJO" secondAttribute="height" multiplier="1:1" id="iUZ-xY-aIV"/>
                                 </constraints>
                             </imageView>
@@ -67,6 +66,7 @@
                             <constraint firstAttribute="bottom" secondItem="nkk-P4-Inr" secondAttribute="bottom" constant="10" id="PY2-5z-zEA"/>
                             <constraint firstAttribute="trailing" secondItem="GCm-xP-Cyb" secondAttribute="trailing" constant="15" id="WHY-kJ-Noh"/>
                             <constraint firstItem="GCm-xP-Cyb" firstAttribute="top" secondItem="iwX-iJ-4n9" secondAttribute="top" constant="5" id="WYT-DG-VeO"/>
+                            <constraint firstItem="Teu-PZ-AJO" firstAttribute="height" secondItem="GCm-xP-Cyb" secondAttribute="height" id="atl-vf-M9U"/>
                             <constraint firstItem="3cH-Ra-dhJ" firstAttribute="leading" secondItem="iwX-iJ-4n9" secondAttribute="leading" constant="15" id="eh7-r3-GQE"/>
                             <constraint firstItem="nkk-P4-Inr" firstAttribute="top" secondItem="iwX-iJ-4n9" secondAttribute="top" constant="17" id="hT5-iF-roO"/>
                             <constraint firstItem="nkk-P4-Inr" firstAttribute="leading" secondItem="3cH-Ra-dhJ" secondAttribute="trailing" id="lgo-QL-Snk"/>
