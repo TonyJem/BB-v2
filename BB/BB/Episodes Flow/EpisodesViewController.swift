@@ -2,7 +2,10 @@ import UIKit
 
 class EpisodesViewController: MainViewController {
     
-    @IBOutlet private var seasonsTableView: UITableView!
+    @IBOutlet private weak var seasonsTableView: UITableView!
+    @IBOutlet private weak var indicatorView: UIView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    
     
     private let seasonModel = Core.seasonModel
     private let apiManager = Core.apiManager
@@ -12,6 +15,7 @@ class EpisodesViewController: MainViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicatorView.isHidden = true
         
         seasonsTableView.register(UINib(nibName: String(describing: EpisodeTableViewCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: EpisodeTableViewCell.self))
         
@@ -81,15 +85,28 @@ extension EpisodesViewController: UITableViewDelegate {
     }
     
     private func fetchCharactersAndPerformSegue() {
+        turnActivityIndicatorON()
         apiManager.getCharacters { result in
             switch result {
             case .success(let characters):
                 self.characterModel.characters = characters
+                self.turnActivityIndicatorOFF()
                 self.performSegue()
             case .failure(let error):
                 print("🔴 \(error)")
+                self.turnActivityIndicatorOFF()
             }
         }
+    }
+    
+    private func turnActivityIndicatorON() {
+        indicatorView.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    private func turnActivityIndicatorOFF() {
+        indicatorView.isHidden = true
+        activityIndicator.stopAnimating()
     }
     
 }

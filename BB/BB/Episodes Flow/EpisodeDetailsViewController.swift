@@ -3,11 +3,12 @@ import UIKit
 class EpisodeDetailsViewController: UIViewController {
     
     @IBOutlet weak private var episodeDetailsTableView: UITableView!
-    
     @IBOutlet weak private var headerContainerView: UIView!
     @IBOutlet weak private var episodeTitleLabel: UILabel!
     @IBOutlet weak private var seasonAndEpisodeNumberLabel: UILabel!
     @IBOutlet weak private var airDateLabel: UILabel!
+    @IBOutlet weak private var indicatorView: UIView!
+    @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
     
     var episode: Episode?
     
@@ -19,6 +20,7 @@ class EpisodeDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        indicatorView.isHidden = true
         episodeDetailsTableView.dataSource = self
         episodeDetailsTableView.delegate = self
         
@@ -88,16 +90,29 @@ extension EpisodeDetailsViewController: UITableViewDelegate {
     }
     
     private func fetchQuotesAndPerformSegue() {
+        turnActivityIndicatorON()
         apiManager.getQuotes { result in
             switch result {
             case .success(let quotes):
                 print("🟢 All Quotes did fetch Ok!")
                 self.quoteModel.quotes = quotes
+                self.turnActivityIndicatorOFF()
                 self.performSegue()
             case .failure(let error):
                 print("🔴 \(error)")
+                self.turnActivityIndicatorOFF()
             }
         }
+    }
+    
+    private func turnActivityIndicatorON() {
+        indicatorView.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    private func turnActivityIndicatorOFF() {
+        indicatorView.isHidden = true
+        activityIndicator.stopAnimating()
     }
     
 }

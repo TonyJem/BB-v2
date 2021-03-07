@@ -20,13 +20,40 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPg-hh-j4Q" userLabel="indicatorView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="tBQ-ue-zqG">
+                                        <rect key="frame" x="20" y="120" width="374" height="374"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="tBQ-ue-zqG" secondAttribute="height" id="WfD-Nc-gPm"/>
+                                        </constraints>
+                                    </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="OfV-Uo-trt">
+                                        <rect key="frame" x="188.5" y="599.5" width="37" height="37"/>
+                                        <color key="color" red="0.93725490199999995" green="0.36815492799999999" blue="0.1080056534" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tBQ-ue-zqG" secondAttribute="trailing" constant="20" id="7PT-jz-qwO"/>
+                                    <constraint firstItem="tBQ-ue-zqG" firstAttribute="top" secondItem="tPg-hh-j4Q" secondAttribute="top" constant="120" id="Pwc-KY-ke8"/>
+                                    <constraint firstItem="OfV-Uo-trt" firstAttribute="centerY" secondItem="tPg-hh-j4Q" secondAttribute="centerY" constant="170" id="a4z-ge-IBl"/>
+                                    <constraint firstItem="OfV-Uo-trt" firstAttribute="centerX" secondItem="tPg-hh-j4Q" secondAttribute="centerX" id="rCU-z6-SEd"/>
+                                    <constraint firstItem="tBQ-ue-zqG" firstAttribute="leading" secondItem="tPg-hh-j4Q" secondAttribute="leading" constant="20" id="riX-iX-VCX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z67-Ft-kTF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FNV-1F-hhE" firstAttribute="top" secondItem="9bf-4P-0vI" secondAttribute="top" id="PXE-Gt-UCF"/>
+                            <constraint firstAttribute="bottom" secondItem="tPg-hh-j4Q" secondAttribute="bottom" id="Pjt-6f-sbo"/>
                             <constraint firstAttribute="trailing" secondItem="FNV-1F-hhE" secondAttribute="trailing" id="QHR-jX-SYj"/>
+                            <constraint firstItem="tPg-hh-j4Q" firstAttribute="top" secondItem="9bf-4P-0vI" secondAttribute="top" id="bhY-LL-JMW"/>
                             <constraint firstItem="FNV-1F-hhE" firstAttribute="leading" secondItem="Z67-Ft-kTF" secondAttribute="leading" id="fcj-F1-CqD"/>
+                            <constraint firstItem="tPg-hh-j4Q" firstAttribute="leading" secondItem="Z67-Ft-kTF" secondAttribute="leading" id="iOu-1x-Gh9"/>
+                            <constraint firstAttribute="trailing" secondItem="tPg-hh-j4Q" secondAttribute="trailing" id="kAY-Nb-aPj"/>
                             <constraint firstAttribute="bottom" secondItem="FNV-1F-hhE" secondAttribute="bottom" id="pvA-W4-Xvp"/>
                         </constraints>
                     </view>
@@ -39,6 +66,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="OfV-Uo-trt" id="f6U-do-D3e"/>
+                        <outlet property="indicatorView" destination="tPg-hh-j4Q" id="3UC-fi-JfI"/>
                         <outlet property="seasonsTableView" destination="FNV-1F-hhE" id="RGX-up-eAY"/>
                         <segue destination="veS-hj-A32" kind="show" identifier="showEpisodeDetailView" id="0iV-6W-kSb"/>
                     </connections>
@@ -55,10 +84,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A73-aV-RwT">
-                                <rect key="frame" x="0.0" y="288" width="414" height="608"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dut-BZ-jzd">
                                 <rect key="frame" x="0.0" y="88" width="414" height="200"/>
                                 <subviews>
@@ -115,6 +140,35 @@
                                     <constraint firstAttribute="bottom" secondItem="0k9-ih-DBh" secondAttribute="bottom" constant="30" id="qbe-lD-Grq"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A73-aV-RwT">
+                                <rect key="frame" x="0.0" y="288" width="414" height="608"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" id="oZA-8T-WCs" userLabel="indicatorView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="cbD-CY-aV3">
+                                        <rect key="frame" x="20" y="120" width="374" height="374"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cbD-CY-aV3" secondAttribute="height" id="i2Z-sr-KBO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="huT-YZ-fyq">
+                                        <rect key="frame" x="188.5" y="599.5" width="37" height="37"/>
+                                        <color key="color" red="0.93725490199999995" green="0.36815492799999999" blue="0.1080056534" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="xx5-P7-Sea"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="cbD-CY-aV3" firstAttribute="leading" secondItem="oZA-8T-WCs" secondAttribute="leading" constant="20" id="2LI-0X-VSG"/>
+                                    <constraint firstItem="cbD-CY-aV3" firstAttribute="top" secondItem="oZA-8T-WCs" secondAttribute="top" constant="120" id="7Ix-6M-plG"/>
+                                    <constraint firstItem="huT-YZ-fyq" firstAttribute="centerY" secondItem="oZA-8T-WCs" secondAttribute="centerY" constant="170" id="KUG-hO-qW7"/>
+                                    <constraint firstAttribute="trailing" secondItem="cbD-CY-aV3" secondAttribute="trailing" constant="20" id="aP1-bN-qcK"/>
+                                    <constraint firstItem="huT-YZ-fyq" firstAttribute="centerX" secondItem="oZA-8T-WCs" secondAttribute="centerX" id="er3-vp-KDF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U0P-YQ-VHh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -130,10 +184,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="94p-h0-yeK"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="huT-YZ-fyq" id="w8g-TJ-1tm"/>
                         <outlet property="airDateLabel" destination="gch-bP-8D1" id="FoN-3F-W0p"/>
                         <outlet property="episodeDetailsTableView" destination="A73-aV-RwT" id="mJf-WF-zpR"/>
                         <outlet property="episodeTitleLabel" destination="X2V-a9-wtX" id="Mke-2y-vVN"/>
                         <outlet property="headerContainerView" destination="dut-BZ-jzd" id="tg7-cK-tde"/>
+                        <outlet property="indicatorView" destination="oZA-8T-WCs" id="QjH-Dw-29v"/>
                         <outlet property="seasonAndEpisodeNumberLabel" destination="r8U-Fj-wXH" id="rWS-hM-wby"/>
                         <segue destination="jEp-32-pU5" kind="show" identifier="showCharacterDetailView" id="ifc-ro-0zr"/>
                     </connections>
@@ -194,6 +250,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="loadingBackground" width="800" height="800"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
