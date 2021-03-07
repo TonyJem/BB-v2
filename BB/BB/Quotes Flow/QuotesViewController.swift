@@ -29,9 +29,9 @@ extension QuotesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Top 3 favourite quotes"
+            return quoteModel.top3Quotes.isEmpty ? nil : "Top 3 favourite quotes"
         case 1:
-            return "Your quotes"
+            return quoteModel.favoriteQuotes.isEmpty ? nil : "Your quotes"
         case 2:
             return "Random quote"
         default:
@@ -108,6 +108,18 @@ extension QuotesViewController: UITableViewDelegate {
     private func editCellContent(at indexPath: IndexPath) {
         quoteModel.didSelect(quote: quoteModel.favoriteQuotes[indexPath.row])
         quotesTableview.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+
+        switch section {
+        case 0:
+            return quoteModel.top3Quotes.isEmpty ? CGFloat.leastNonzeroMagnitude : 35
+        case 1:
+            return quoteModel.favoriteQuotes.isEmpty ? CGFloat.leastNonzeroMagnitude : 35
+        default:
+            return 35
+        }
     }
     
 }
