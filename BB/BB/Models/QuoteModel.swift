@@ -59,7 +59,7 @@ class QuoteModel {
     
     func didSelect(quote: Quote) {
         if favoriteQuotes.contains(quote) {
-            favoriteQuotes = favoriteQuotes.filter(){$0.text != quote.text}
+            favoriteQuotes = favoriteQuotes.filter({ $0.text != quote.text })
             removeFromLikedQuotes(quote)
         } else {
             favoriteQuotes.append(quote)
@@ -68,7 +68,8 @@ class QuoteModel {
     }
     
     func didSelectFromTop3(quote: likedQuote) {
-        print("🟢 Did select Top3Quote: \(quote.text)")
+        guard let selectedQuote = getQuote(by: quote.text) else { return }
+        didSelect(quote: selectedQuote)
     }
     
     private func addToLikedQuotes(_ quote: Quote) {
@@ -90,6 +91,11 @@ class QuoteModel {
         } else {
             allLikedQuotes[index].userCount = allLikedQuotes[index].userCount - 1
         }
+    }
+    
+    private func getQuote(by text: String) -> Quote? {
+        guard let quote = quotes.filter({ $0.text == text }).first else { return nil }
+        return quote
     }
     
 }
