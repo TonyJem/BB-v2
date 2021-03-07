@@ -66,7 +66,7 @@
                 <outlet property="iconImageView" destination="esj-RO-c3Y" id="xa5-T6-gIQ"/>
                 <outlet property="quoteTextLabel" destination="XsT-jU-gIN" id="dXg-eX-ddJ"/>
             </connections>
-            <point key="canvasLocation" x="-342.02898550724638" y="2.6785714285714284"/>
+            <point key="canvasLocation" x="-328" y="-30"/>
         </tableViewCell>
     </objects>
     <resources>

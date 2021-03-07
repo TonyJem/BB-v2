@@ -11,6 +11,8 @@ class QuotesViewController: UIViewController {
         
         quotesTableview.register(UINib(nibName: String(describing: quoteCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: quoteCell.self))
         
+        quotesTableview.register(UINib(nibName: String(describing: top3QuoteCell.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: top3QuoteCell.self))
+        
         quotesTableview.dataSource = self
         quotesTableview.delegate = self
         quotesTableview.tableFooterView = UIView()
@@ -54,6 +56,9 @@ extension QuotesViewController: UITableViewDataSource {
         guard let cell = quotesTableview.dequeueReusableCell(withIdentifier: String(describing: quoteCell.self), for: indexPath) as? quoteCell else { return UITableViewCell() }
         switch indexPath.section {
         case 0:
+            
+            guard let cell = quotesTableview.dequeueReusableCell(withIdentifier: String(describing: top3QuoteCell.self), for: indexPath) as? top3QuoteCell else { return UITableViewCell() }
+            
             cell.fillContentInTop3Quotes(with: quoteModel.top3Quotes[indexPath.row])
             return cell
         case 1:

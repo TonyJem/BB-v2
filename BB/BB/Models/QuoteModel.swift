@@ -75,7 +75,13 @@ class QuoteModel {
         let text = quote.text
         
         if let index = allLikedQuotes.firstIndex(where: { $0.text == text }) {
-            allLikedQuotes[index].userCount = +1
+            
+            var count = allLikedQuotes[index].userCount
+            count = count + 1
+            allLikedQuotes.remove(at: index)
+            let newLikedQuote = likedQuote(text: text, userCount: count)
+            allLikedQuotes.append(newLikedQuote)
+            
         } else {
             let newLikedQuote = likedQuote(text: text, userCount: 1)
             allLikedQuotes.append(newLikedQuote)
@@ -88,7 +94,7 @@ class QuoteModel {
         if allLikedQuotes[index].userCount <= 1 {
             allLikedQuotes.remove(at: index)
         } else {
-            allLikedQuotes[index].userCount = -1
+            allLikedQuotes[index].userCount = allLikedQuotes[index].userCount - 1
         }
     }
     
