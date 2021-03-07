@@ -101,7 +101,7 @@
                                             <constraint firstItem="oZc-u9-aFB" firstAttribute="height" secondItem="DFS-xK-F1H" secondAttribute="height" id="oml-yk-rFe"/>
                                         </constraints>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNU-n1-Orc" userLabel="indicatorView">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNU-n1-Orc" userLabel="indicatorView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="HrV-Lv-q5p">

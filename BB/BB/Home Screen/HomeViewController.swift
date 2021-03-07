@@ -18,14 +18,8 @@ class HomeViewController: MainViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        indicatorView.isHidden = true
         
-        guard let loggedInAccount = AccountManager.loggedInAccount else { return }
-        usernameLabel.text = loggedInAccount.username
-        //        TODO: switched off for test reasons
-        //        BUG: Button does not know if user added favourites... Might is necessary to add Observer.
-        //        quotesButton.isEnabled = !loggedInAccount.favouriteQuotes.isEmpty
-        
+        setupUI()
     }
     
     @IBAction private func episodesButtonTapped(_ sender: UIButton) {
@@ -75,6 +69,21 @@ class HomeViewController: MainViewController {
 }
 
 private extension HomeViewController {
+    
+    func setupUI() {
+        indicatorView.isHidden = true
+        guard let loggedInAccount = AccountManager.loggedInAccount else { return }
+        usernameLabel.text = loggedInAccount.username
+        
+        episodesButton.layer.cornerRadius = episodesButton.frame.size.height/2
+        charactersButton.layer.cornerRadius = episodesButton.frame.size.height/2
+        quotesButton.layer.cornerRadius = episodesButton.frame.size.height/2
+        
+        
+        //        TODO: switched off for test reasons
+        //        BUG: Button does not know if user added favourites... Might is necessary to add Observer.
+        //        quotesButton.isEnabled = !loggedInAccount.favouriteQuotes.isEmpty
+    }
     
     func fetchEpisodesToModel() {
         self.turnActivityIndicatorON()
