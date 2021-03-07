@@ -88,7 +88,7 @@ extension QuotesViewController: UITableViewDelegate {
             quoteModel.didSelect(quote: quoteModel.randomQuote)
         default:
 //            TODO: Add enum so do not need default in switch
-            print("Unexpected default section")
+            print("🔴 Unexpected default section")
         }
         
         tableView.reloadData()
