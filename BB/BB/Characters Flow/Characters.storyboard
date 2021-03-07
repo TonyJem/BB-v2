@@ -32,6 +32,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Characters" id="g5r-cW-guk">
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="xDe-24-glH">
+                            <color key="tintColor" red="0.93725490199999995" green="0.36815492799999999" blue="0.1080056534" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="filterButtonTapped:" destination="hgE-bD-G6B" id="Yyo-dh-bqM"/>
                             </connections>
@@ -54,6 +55,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N0D-ne-WsL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.93725490199999995" green="0.36815492799999999" blue="0.1080056534" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
