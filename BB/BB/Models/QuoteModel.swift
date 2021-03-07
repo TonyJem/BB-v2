@@ -1,6 +1,6 @@
 import Foundation
 
-struct likedQuote {
+struct likedQuote: Codable {
     let text: String
     var userCount: Int
 }
@@ -8,7 +8,16 @@ struct likedQuote {
 class QuoteModel {
     
     var quotes = [Quote]()
-    var allLikedQuotes = [likedQuote]()
+    
+    var allLikedQuotes: [likedQuote] {
+        get {
+            guard let likedQuotes = UserDefaultsManager.likedQuotes else { return [] }
+            return likedQuotes
+        }
+        set(likedQuotes) {
+            UserDefaultsManager.likedQuotes = likedQuotes
+        }
+    }
     
     var top3Quotes: [likedQuote] {
         var top3Quotes = allLikedQuotes

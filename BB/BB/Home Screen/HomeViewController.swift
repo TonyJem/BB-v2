@@ -68,6 +68,8 @@ class HomeViewController: MainViewController {
         if let currentAccount = UserDefaultsManager.currentAccount {
             UserDefaultsManager.save(favoriteQuotes: quotesModel.favoriteQuotes, to: currentAccount)
         }
+        
+        UserDefaultsManager.saveLikedQuotes()
         AccountManager.loggedInAccount = nil
         dismiss(animated: true)
     }

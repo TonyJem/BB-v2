@@ -5,6 +5,7 @@ struct UserDefaultsManager {
     private enum UserDefaultsManagerKey {
         static let accounts = "Accounts"
         static let loggedInAccount = "loggedInAccount"
+        static let likedQuotes = "LikedQuotes"
     }
     
     private static var userDefaults: UserDefaults {
@@ -39,6 +40,9 @@ struct UserDefaultsManager {
         accounts = savedAccounts
     }
     
+    static func saveLikedQuotes() {
+        likedQuotes = Core.quoteModel.allLikedQuotes
+    }
 }
 
 // MARK: - Helpers
@@ -66,6 +70,18 @@ extension UserDefaultsManager {
         } set {
             let currentAccount = try? JSONEncoder().encode(newValue)
             userDefaults.set(currentAccount, forKey: UserDefaultsManagerKey.loggedInAccount)
+        }
+    }
+    
+    static var likedQuotes: [likedQuote]? {
+        get {
+            guard let encodedLikedQuotes = userDefaults.object(forKey: UserDefaultsManagerKey.likedQuotes) as? Data else {
+                return nil
+            }
+            return try? JSONDecoder().decode([likedQuote].self, from: encodedLikedQuotes)
+        } set {
+            let encodedLikedQuotes = try? JSONEncoder().encode(newValue)
+            userDefaults.set(encodedLikedQuotes, forKey: UserDefaultsManagerKey.likedQuotes)
         }
     }
     
