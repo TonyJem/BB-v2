@@ -11,7 +11,7 @@
         <!--Home View Controller-->
         <scene sceneID="XX0-GD-Yyc">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="SAa-3R-7Ad" customClass="HomeViewController" customModule="BreakingBadFan_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="SAa-3R-7Ad" customClass="HomeViewController" customModule="BB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Db-FD-epr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breaking Bad Fan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfK-mC-9pB">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -44,11 +44,14 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4R-54-2Jr">
-                                        <rect key="frame" x="183" y="796" width="48" height="40"/>
+                                        <rect key="frame" x="176" y="796" width="62" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ac2-X2-hLK"/>
                                         </constraints>
-                                        <state key="normal" title="Logout"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.36815492799999999" blue="0.1080056534" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="logoutButtonTapped:" destination="SAa-3R-7Ad" eventType="touchUpInside" id="toK-LD-l2t"/>
                                         </connections>
@@ -58,21 +61,33 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuX-ex-JsR">
                                                 <rect key="frame" x="0.0" y="0.0" width="248" height="56"/>
-                                                <state key="normal" title="Episodes"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <state key="normal" title="Episodes">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="episodesButtonTapped:" destination="SAa-3R-7Ad" eventType="touchUpInside" id="Lq9-vK-6Eh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFS-xK-F1H">
                                                 <rect key="frame" x="0.0" y="81" width="248" height="56"/>
-                                                <state key="normal" title="Characters"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <state key="normal" title="Characters">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="charactersButtonTapped:" destination="SAa-3R-7Ad" eventType="touchUpInside" id="6rZ-Ui-yZj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZc-u9-aFB">
                                                 <rect key="frame" x="0.0" y="162" width="248" height="56"/>
-                                                <state key="normal" title="Quotes"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <state key="normal" title="Quotes">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="quotesButtonTapped:" destination="SAa-3R-7Ad" eventType="touchUpInside" id="xBG-3i-fH0"/>
                                                 </connections>
