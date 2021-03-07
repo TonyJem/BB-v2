@@ -20,13 +20,40 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jhl-kd-tSp" userLabel="indicatorView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="fDJ-Fa-i8P">
+                                        <rect key="frame" x="20" y="120" width="374" height="374"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fDJ-Fa-i8P" secondAttribute="height" id="l8T-WV-0n3"/>
+                                        </constraints>
+                                    </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2vt-WX-bSp">
+                                        <rect key="frame" x="188.5" y="599.5" width="37" height="37"/>
+                                        <color key="color" red="0.93725490199999995" green="0.36815492799999999" blue="0.1080056534" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fDJ-Fa-i8P" secondAttribute="trailing" constant="20" id="CCy-L2-eGE"/>
+                                    <constraint firstItem="2vt-WX-bSp" firstAttribute="centerY" secondItem="Jhl-kd-tSp" secondAttribute="centerY" constant="170" id="CeZ-sN-eQd"/>
+                                    <constraint firstItem="2vt-WX-bSp" firstAttribute="centerX" secondItem="Jhl-kd-tSp" secondAttribute="centerX" id="N1N-lg-0U9"/>
+                                    <constraint firstItem="fDJ-Fa-i8P" firstAttribute="leading" secondItem="Jhl-kd-tSp" secondAttribute="leading" constant="20" id="Wby-YN-E6Z"/>
+                                    <constraint firstItem="fDJ-Fa-i8P" firstAttribute="top" secondItem="Jhl-kd-tSp" secondAttribute="top" constant="120" id="y6T-5T-yEM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z67-Ft-kTF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Jhl-kd-tSp" firstAttribute="leading" secondItem="Z67-Ft-kTF" secondAttribute="leading" id="06b-Xm-d3g"/>
+                            <constraint firstAttribute="bottom" secondItem="Jhl-kd-tSp" secondAttribute="bottom" id="2at-Pf-V7J"/>
                             <constraint firstItem="FNV-1F-hhE" firstAttribute="top" secondItem="9bf-4P-0vI" secondAttribute="top" id="PXE-Gt-UCF"/>
                             <constraint firstAttribute="trailing" secondItem="FNV-1F-hhE" secondAttribute="trailing" id="QHR-jX-SYj"/>
+                            <constraint firstItem="Jhl-kd-tSp" firstAttribute="trailing" secondItem="Z67-Ft-kTF" secondAttribute="trailing" id="bkb-G1-ddw"/>
                             <constraint firstItem="FNV-1F-hhE" firstAttribute="leading" secondItem="Z67-Ft-kTF" secondAttribute="leading" id="fcj-F1-CqD"/>
+                            <constraint firstItem="Jhl-kd-tSp" firstAttribute="top" secondItem="9bf-4P-0vI" secondAttribute="top" id="iQi-XI-Den"/>
                             <constraint firstAttribute="bottom" secondItem="FNV-1F-hhE" secondAttribute="bottom" id="pvA-W4-Xvp"/>
                         </constraints>
                     </view>
@@ -39,7 +66,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="2vt-WX-bSp" id="riP-Ec-sEZ"/>
                         <outlet property="charactersTableView" destination="FNV-1F-hhE" id="FHb-3K-wTw"/>
+                        <outlet property="indicatorView" destination="Jhl-kd-tSp" id="mmc-Xd-Ef7"/>
                         <segue destination="O78-3J-Xij" kind="show" identifier="showCharacterFromCharacters" id="Twl-XC-hrZ"/>
                     </connections>
                 </viewController>
@@ -99,6 +128,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="loadingBackground" width="800" height="800"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
