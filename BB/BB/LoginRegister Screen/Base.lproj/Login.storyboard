@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="BreakingBadFan_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="BB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,17 +19,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvu-FG-kXV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cz4-0e-F9t" userLabel="blackView">
+                                        <rect key="frame" x="0.0" y="378.5" width="414" height="517.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breaking Bad Fan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iA-y9-VKn">
-                                        <rect key="frame" x="141" y="170" width="132.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="20" y="175.5" width="172.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnv-Zy-RaJ">
-                                        <rect key="frame" x="20" y="298.5" width="374" height="299"/>
+                                        <rect key="frame" x="30" y="448.5" width="354" height="299"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sRY-WK-D4l">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="41"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="41"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="CKy-Lg-cbG"/>
                                                 </constraints>
@@ -42,7 +46,7 @@
                                                 </connections>
                                             </segmentedControl>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11M-nj-no4">
-                                                <rect key="frame" x="0.0" y="259" width="374" height="40"/>
+                                                <rect key="frame" x="0.0" y="259" width="354" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Wdg-dC-1ZL"/>
                                                 </constraints>
@@ -52,26 +56,26 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c4E-HI-zmY">
-                                                <rect key="frame" x="20" y="70" width="334" height="160"/>
+                                                <rect key="frame" x="20" y="70" width="314" height="160"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yqh-VC-8NN" customClass="CustomTextField" customModule="BreakingBadFan_App" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yqh-VC-8NN" customClass="CustomTextField" customModule="BB" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="792-Vw-xg3"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="huh-9h-5lL" customClass="CustomTextField" customModule="BreakingBadFan_App" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="60" width="334" height="40"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="huh-9h-5lL" customClass="CustomTextField" customModule="BB" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="60" width="314" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="FsZ-40-Rxz"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9iw-a4-YEq" customClass="CustomTextField" customModule="BreakingBadFan_App" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="120" width="334" height="40"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9iw-a4-YEq" customClass="CustomTextField" customModule="BB" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="120" width="314" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="01I-Yx-YED"/>
                                                         </constraints>
@@ -79,6 +83,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     </textField>
                                                 </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="huh-9h-5lL" firstAttribute="leading" secondItem="c4E-HI-zmY" secondAttribute="leading" id="XXe-3f-LOv"/>
                                                     <constraint firstItem="9iw-a4-YEq" firstAttribute="leading" secondItem="c4E-HI-zmY" secondAttribute="leading" id="XvM-VO-gq2"/>
@@ -89,7 +94,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="sRY-WK-D4l" firstAttribute="top" secondItem="rnv-Zy-RaJ" secondAttribute="top" id="2MM-wq-yGS"/>
                                             <constraint firstItem="c4E-HI-zmY" firstAttribute="leading" secondItem="rnv-Zy-RaJ" secondAttribute="leading" constant="20" id="GQS-gz-aQ7"/>
@@ -102,15 +107,26 @@
                                             <constraint firstAttribute="bottom" secondItem="11M-nj-no4" secondAttribute="bottom" id="q7m-dP-7fk"/>
                                         </constraints>
                                     </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgound" translatesAutoresizingMaskIntoConstraints="NO" id="HPO-6M-6tn">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="378.5"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="0iA-y9-VKn" firstAttribute="top" secondItem="Kvu-FG-kXV" secondAttribute="top" constant="170" id="Qls-W9-PpR"/>
-                                    <constraint firstAttribute="trailing" secondItem="rnv-Zy-RaJ" secondAttribute="trailing" constant="20" id="Sza-ef-QZT"/>
-                                    <constraint firstItem="0iA-y9-VKn" firstAttribute="centerX" secondItem="Kvu-FG-kXV" secondAttribute="centerX" id="YDJ-8L-Jee"/>
+                                    <constraint firstItem="0iA-y9-VKn" firstAttribute="leading" secondItem="Kvu-FG-kXV" secondAttribute="leading" constant="20" id="6GI-Jt-qDy"/>
+                                    <constraint firstItem="Cz4-0e-F9t" firstAttribute="top" secondItem="HPO-6M-6tn" secondAttribute="bottom" id="AsP-Op-W5W"/>
+                                    <constraint firstItem="HPO-6M-6tn" firstAttribute="leading" secondItem="Kvu-FG-kXV" secondAttribute="leading" id="OMO-5N-gfX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cz4-0e-F9t" secondAttribute="trailing" id="RjT-Em-HfP"/>
+                                    <constraint firstAttribute="trailing" secondItem="rnv-Zy-RaJ" secondAttribute="trailing" constant="30" id="Sza-ef-QZT"/>
                                     <constraint firstItem="rnv-Zy-RaJ" firstAttribute="height" secondItem="Kvu-FG-kXV" secondAttribute="height" multiplier="0.333333" id="dYe-U8-EDq"/>
-                                    <constraint firstItem="rnv-Zy-RaJ" firstAttribute="leading" secondItem="Kvu-FG-kXV" secondAttribute="leading" constant="20" id="fK0-xB-rtg"/>
-                                    <constraint firstItem="rnv-Zy-RaJ" firstAttribute="centerY" secondItem="Kvu-FG-kXV" secondAttribute="centerY" id="kaQ-VW-YOA"/>
+                                    <constraint firstAttribute="trailing" secondItem="HPO-6M-6tn" secondAttribute="trailing" id="eca-5Q-3W4"/>
+                                    <constraint firstItem="rnv-Zy-RaJ" firstAttribute="leading" secondItem="Kvu-FG-kXV" secondAttribute="leading" constant="30" id="fK0-xB-rtg"/>
+                                    <constraint firstItem="rnv-Zy-RaJ" firstAttribute="centerY" secondItem="Kvu-FG-kXV" secondAttribute="centerY" constant="150" id="kaQ-VW-YOA"/>
+                                    <constraint firstItem="Cz4-0e-F9t" firstAttribute="top" secondItem="rnv-Zy-RaJ" secondAttribute="top" constant="-70" id="qHR-Lz-CdP"/>
+                                    <constraint firstItem="Cz4-0e-F9t" firstAttribute="leading" secondItem="Kvu-FG-kXV" secondAttribute="leading" id="t6z-Ii-Bgg"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cz4-0e-F9t" secondAttribute="bottom" id="uOX-Ad-asL"/>
+                                    <constraint firstItem="0iA-y9-VKn" firstAttribute="centerY" secondItem="HPO-6M-6tn" secondAttribute="centerY" id="xUt-MJ-mMn"/>
+                                    <constraint firstItem="HPO-6M-6tn" firstAttribute="top" secondItem="Kvu-FG-kXV" secondAttribute="top" id="y5t-d6-SbT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -138,6 +154,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backgound" width="1257" height="947"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
