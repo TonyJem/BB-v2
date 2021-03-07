@@ -54,7 +54,7 @@ extension QuotesViewController: UITableViewDataSource {
         guard let cell = quotesTableview.dequeueReusableCell(withIdentifier: String(describing: quoteCell.self), for: indexPath) as? quoteCell else { return UITableViewCell() }
         switch indexPath.section {
         case 0:
-            cell.fillContent(with: quoteModel.top3Quotes[indexPath.row])
+            cell.fillContentInTop3Quotes(with: quoteModel.top3Quotes[indexPath.row])
             return cell
         case 1:
             cell.fillContent(with: quoteModel.favoriteQuotes[indexPath.row])
@@ -76,7 +76,7 @@ extension QuotesViewController: UITableViewDelegate {
         
         switch indexPath.section {
         case 0:
-            quoteModel.didSelect(quote: quoteModel.top3Quotes[indexPath.row])
+            quoteModel.didSelectFromTop3(quote: quoteModel.top3Quotes[indexPath.row])
         case 1:
             quoteModel.didSelect(quote: quoteModel.favoriteQuotes[indexPath.row])
         case 2:

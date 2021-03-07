@@ -16,4 +16,19 @@ class quoteCell: UITableViewCell {
         
     }
     
+    func fillContentInTop3Quotes(with quote: likedQuote) {
+        quoteTextLabel.text = quote.text
+        
+        let filteredQuotes = Core.quoteModel.favoriteQuotes.filter { userFavoriteQuote in
+            return userFavoriteQuote.text == quote.text
+        }
+        
+        if filteredQuotes.isEmpty {
+            iconImageView.image = UIImage(named: "unselectedHeart")
+        } else {
+            iconImageView.image = UIImage(named: "heartIcon")
+        }
+        
+    }
+    
 }
